@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Login  = () => {
+const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -11,8 +11,8 @@ const Login  = () => {
           <button className="nuurniital"></button>
         </div>
         <div className="login-form">
-          <h3 className="ngdehug">Welcome Back</h3>
-          <p className="hoyrdhUg">Welcome back, Please enter your details</p>
+          <h3>Welcome Back</h3>
+          <p>Welcome back, Please enter your details</p>
           <input
             type="email"
             placeholder="Email"
