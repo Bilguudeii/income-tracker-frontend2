@@ -1,38 +1,14 @@
-import React, { useState } from "react";
+import { GeldIcon } from "./Icons/Geld";
 
-const Login  = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+const Home = () => {
+
 
   return (
     <>
-      <div className="Main">
-        <div>
-          <button className="nuurniital"></button>
-        </div>
-        <div className="login-form">
-          <h3 className="ngdehug">Welcome Back</h3>
-          <p className="hoyrdhUg">Welcome back, Please enter your details</p>
-          <input
-            type="email"
-            placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <input
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-          <button type="submit">Log in</button>
-          <p>
-            Dont have an account? <a href="/signup">Sign up</a>
-          </p>
-        </div>
-      </div>
+
+          <GeldIcon/>
     </>
   );
 };
 
-export default Login;
+export default Home;

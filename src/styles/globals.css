@@ -5,9 +5,9 @@
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
 }
-.main {
-  width: 1440px;
-  height: var(--t--breakpoints-lg, 1024px);
+.Main {
+  width: 100vw;
+  height: 100vh;
   display: flex;
   flex-direction: row;
 }
@@ -15,11 +15,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100vh;
+  width: 50%;
+  margin-top: 250px;
 }
 .nuurniital {
-  width: 708px;
-  height: var(--t--breakpoints-lg, 1024px);
+  width: 50%;
   flex-shrink: 0;
   border-radius: var(--t--borders-radius-rounded-none, 0px);
 background: var(--d--colors-semantic-primary, #0166FF);
@@ -124,6 +124,11 @@ line-height: 24px;
   color: #0F172A;
 font-size: 24px;
 font-style: normal;
-font-weight: 600;
+font-weight: 800;
 line-height: 32px;
+margin-top: 60px;
+}
+.aaaaD {
+  display: flex;
+  flex-direction: column;
 }
