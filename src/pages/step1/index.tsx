@@ -3,9 +3,8 @@ import Box from '@mui/material/Box';
 import Stepper from '@mui/material/Stepper';
 import Step from '@mui/material/Step';
 import StepLabel from '@mui/material/StepLabel';
-import Typography from '@mui/material/Typography';
 
-const steps = ['Select campaign settings', 'Create an ad group', 'Create an ad'];
+const steps = ['Currency', 'Balance', 'Finish'];
 
 export default function HorizontalStepperWithError() {
   const isStepFailed = (step: number) => {
@@ -21,11 +20,8 @@ export default function HorizontalStepperWithError() {
             error?: boolean;
           } = {};
           if (isStepFailed(index)) {
-            labelProps.optional = (
-              <Typography variant="caption" color="error">
-                Alert message
-              </Typography>
-            );
+            labelProps.optional = 
+
             labelProps.error = true;
           }
 

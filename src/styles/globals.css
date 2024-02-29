@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 * {
-  margin : 0px;
-  padding : 0px;
+  margin: 0px;
+  padding: 0px;
   box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto";
 }
 .Main {
   width: 100vw;
@@ -22,8 +22,8 @@
   width: 50%;
   flex-shrink: 0;
   border-radius: var(--t--borders-radius-rounded-none, 0px);
-background: var(--d--colors-semantic-primary, #0166FF);
-border: none;
+  background: var(--d--colors-semantic-primary, #0166ff);
+  border: none;
 }
 
 .login-form input {
@@ -40,7 +40,7 @@ border: none;
   width: 320px;
   height: 40px;
   margin: 10px 0;
-  background-color: #0166FF;
+  background-color: #0166ff;
   color: white;
   border: none;
   border-radius: 4px;
@@ -49,7 +49,7 @@ border: none;
 }
 
 .login-form button:hover {
-  background-color: #0166FF;
+  background-color: #0166ff;
 }
 
 .login-form p {
@@ -59,7 +59,7 @@ border: none;
 }
 
 .login-form a {
-  color: #0166FF;
+  color: #0166ff;
   text-decoration: none;
 }
 
@@ -87,7 +87,7 @@ border: none;
   width: 320px;
   height: 40px;
   margin: 10px 0;
-  background-color: #0166FF;
+  background-color: #0166ff;
   color: white;
   border: none;
   border-radius: 4px;
@@ -96,7 +96,7 @@ border: none;
 }
 
 .login-form button:hover {
-  background-color: #0166FF;
+  background-color: #0166ff;
 }
 
 .login-form p {
@@ -106,7 +106,7 @@ border: none;
 }
 
 .login-form a {
-  color: #0166FF;
+  color: #0166ff;
   text-decoration: none;
 }
 
@@ -114,21 +114,114 @@ border: none;
   text-decoration: underline;
 }
 .hoyrdhUg {
-  color:  #334155;
-font-size: 16px;
-font-style: normal;
-font-weight: 400;
-line-height: 24px;
+  color: #334155;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
 }
 .ngdehug {
-  color: #0F172A;
-font-size: 24px;
-font-style: normal;
-font-weight: 800;
-line-height: 32px;
-margin-top: 60px;
+  color: #0f172a;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 32px;
+  margin-top: 60px;
 }
 .aaaaD {
   display: flex;
   flex-direction: column;
+}
+.MAIIIN {
+  width: 1440px;
+}
+.prof {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.topmain {
+  display: flex;
+  gap: 50px;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px, 120px, 16px, 120px;
+  background-color: white;
+  margin-top: 20px;
+}
+.dash {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+}
+.records {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+}
+.top2main {
+  display: flex;
+  gap: 20px;
+}
+.buttonRec {
+  background-color: #0166ff;
+  display: flex;
+  border-radius: 20px;
+  width: 99px;
+  height: 32px;
+  border: none;
+  gap: 4px;
+  justify-content: center;
+  padding: 7px 0px 0px 0px;
+  margin-top: 5px;
+  color: white;
+}
+.buttonRecc {
+  width: 51px;
+  height: 24px;
+}
+.MMAIN {
+  display: flex;
+  justify-content: center;
+}
+.dashboardOn {
+  background-color: #0166ff;
+}
+.dashboardTwo {
+  background-color: white;
+  width: 384.12px;
+  height: 219.66px;
+}
+.MAAIINN {
+  background-color: #f3f4f6;
+}
+.Stack {
+  display: flex;
+  flex-direction: row;
+  margin-top: 50px;
+  background-color: #f3f4f6;
+}
+.urinc {
+  margin-top: 20px;
+  margin-left: 30px;
+}
+.twotop {
+  border: 0px, 0px, 1px, 0px;
+}
+.texttt {
+  font-size: 36px;
+  margin-top: 30px;
+}
+.textttt {
+  margin-top: 10px;
+}
+.texttttt {
+  margin-top: 30px;
+}
+.Stackk {
+  display: flex;
+  background-color: #f3f4f6;
+  gap: 140px;
 }
