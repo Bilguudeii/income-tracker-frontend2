@@ -26,9 +26,27 @@ const Home = () => {
 
           <div className="Stack">
             <div className="Stackk">
-              <DashBoardOne/>
-              <DashBoardTwo/>
-              <DashBoardTwo/>
+              <DashBoardOne />
+              <DashBoardTwo />
+              <DashBoardTwo />
+            </div>
+          </div>
+          <div className="middlee">
+            <div>
+              <div className="middletwo">
+                <h2>Income - Expense</h2>
+              </div>
+              <div className="middletwoo">
+                A
+              </div>
+            </div>
+            <div>
+              <div className="middletwo">
+                <h3>Income - Expense</h3>
+              </div>
+              <div className="middletwoo">
+                A
+              </div>
             </div>
           </div>
         </div>
