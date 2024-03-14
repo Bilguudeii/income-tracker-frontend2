@@ -242,5 +242,32 @@
 }
 .middlee {
   display: flex;
-  gap: 35px;
+  gap: 45px;
+}
+.bottom{
+  margin-top: 30px;
+}
+.bluecircle {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background-color: rgba(1, 102, 255, 1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 15px;
+}
+.containerList {
+  display: flex;
+  padding: 20px, 0px, 20px, 0px;
+  gap: 15px;
+  border-bottom: 1px solid gray;
+}
+.transactionNoteTitle{
+  display: flex;
+  flex-direction: column;
+}
+.lastrecords{
+  padding: 16px, 24px, 16px, 24px;
+  border-bottom: 1px solid gray;
 }

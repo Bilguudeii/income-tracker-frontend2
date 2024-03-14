@@ -2,6 +2,7 @@ import { GeldIconLogo } from "./Icons/GeldLogo";
 import { Plus } from "./Icons/Plus";
 import DashBoardOne from "./component/DashBoardOne";
 import DashBoardTwo from "./component/DashBoardTwo";
+import { List } from "./component//list";
 
 const Home = () => {
   return (
@@ -36,19 +37,18 @@ const Home = () => {
               <div className="middletwo">
                 <h2>Income - Expense</h2>
               </div>
-              <div className="middletwoo">
-                A
-              </div>
+              <div className="middletwoo">A</div>
             </div>
             <div>
               <div className="middletwo">
                 <h3>Income - Expense</h3>
               </div>
-              <div className="middletwoo">
-                A
-              </div>
+              <div className="middletwoo">A</div>
             </div>
           </div>
+              <div className="bottom">
+                <List/>
+              </div>
         </div>
       </div>
     </>

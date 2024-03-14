@@ -1,30 +1,32 @@
+import { Home } from "../Icons/home";
+
 type Transcation = {
-    amount : number;
-    category : string;
-    createdAt : Date | string;
-    note : string;
-    transcationTitle : string;
-    transactionType : string;
-    userId : string;
-    __v : number;
-    _id : string;
-}
+  amount: number;
+  category: string;
+  createAt: Date | string;
+  note: string;
+  transactionTitle: string;
+  transactionType: string;
+  userId: string;
+  __v: number;
+  _id: string;
+};
 
-export const listItem = ({ transaction}:{transaction: Transcation}) => {
-    transaction.createdAt
-    const date1 = new Date(transaction.createdAt);
-    const date2 = new Date();
+export const ListItem = ({ transaction }: { transaction: Transcation }) => {
+  console.log(transaction);
+  return (
+    <div className="containerList">
+      <div className="bluecircle">
+        <Home />
+      </div>
+      <div className="transactionNoteTitle">
+        {transaction.transactionTitle}
 
-    const differenceMs = Number(date2) - Number(date1)
-
-    const differenceHours = Math.round(differenceMs / (1000 * 60 * 60));
-    console.log(differenceHours)
-
-    return (
-        <div style={{ backgroundColor: "grey" , borderBottom: '1px solid pink' }}>
-            <div>
-                {transaction.category}
-            </div>
-        </div>
-    )
-}
+        {transaction.note}
+      </div>
+      <div>
+        {transaction.amount}
+      </div>
+    </div>
+  );
+};
