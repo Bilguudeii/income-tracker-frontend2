@@ -3,8 +3,10 @@ import { Plus } from "./Icons/Plus";
 import DashBoardOne from "./component/DashBoardOne";
 import DashBoardTwo from "./component/DashBoardTwo";
 import { List } from "./component//list";
+import { useRouter } from "next/router";
 
 const Home = () => {
+  const router = useRouter()
   return (
     <>
       <div className="MMAIN">
@@ -13,7 +15,7 @@ const Home = () => {
             <div className="topmain">
               <GeldIconLogo />
               <h2 className="dash">Dashboard</h2>
-              <h2 className="records">Records</h2>
+              <div className="records" onClick={() => router.push('/records')}>Records</div>
             </div>
             <div className="top2main">
               <div>
@@ -46,13 +48,14 @@ const Home = () => {
               <div className="middletwoo">A</div>
             </div>
           </div>
-              <div className="bottom">
-                <List/>
-              </div>
+          <div className="bottom">
+            <List />
+          </div>
         </div>
       </div>
     </>
   );
 };
+
 
 export default Home;

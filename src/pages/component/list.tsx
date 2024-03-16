@@ -12,18 +12,17 @@ export const List = () => {
     };
     fetchData();
   }, []);
-    console.log(transactions)
+  console.log(transactions)
   return (
     <div
       style={{
-        backgroundColor: "white",
-        borderBottom: "1px solid grey",
       }}
-    >
-      <div className="lastrecords">Last records</div>
-      {transactions.map((transaction, index) => (
-        <ListItem key={index} transaction={transaction} />
-      ))}
+    > <div className="lasst">
+        <div className="lastrecords">Last records</div>
+        {transactions.map((transaction, index) => (
+          <ListItem key={index} transaction={transaction} />
+        ))}
+      </div>
     </div>
   );
 };

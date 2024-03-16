@@ -1,16 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
 * {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
   font-family: "Roboto";
 }
+
 .Main {
   width: 100vw;
   height: 100vh;
   display: flex;
   flex-direction: row;
 }
+
 .login-form {
   display: flex;
   flex-direction: column;
@@ -18,6 +21,7 @@
   width: 50%;
   margin-top: 250px;
 }
+
 .nuurniital {
   width: 50%;
   flex-shrink: 0;
@@ -66,6 +70,7 @@
 .login-form a:hover {
   text-decoration: underline;
 }
+
 .login-form {
   display: flex;
   flex-direction: column;
@@ -113,6 +118,7 @@
 .login-form a:hover {
   text-decoration: underline;
 }
+
 .hoyrdhUg {
   color: #334155;
   font-size: 16px;
@@ -120,6 +126,7 @@
   font-weight: 400;
   line-height: 24px;
 }
+
 .ngdehug {
   color: #0f172a;
   font-size: 24px;
@@ -128,43 +135,57 @@
   line-height: 32px;
   margin-top: 60px;
 }
+
 .aaaaD {
   display: flex;
   flex-direction: column;
 }
+
 .MAIIIN {
-  width: 1440px;
 }
+
 .prof {
   width: 40px;
   height: 40px;
   border-radius: 50%;
 }
+
 .topmain {
   display: flex;
   gap: 50px;
+  margin-top: 25px;
+  margin-bottom: 25px ;
 }
+
 .navbar {
   display: flex;
-  justify-content: space-between;
-  padding: 16px, 120px, 16px, 120px;
+  justify-content: center;
+  gap: 1000px;
+  padding: 16px, 120px, 36px, 120px;
   background-color: white;
-  margin-top: 20px;
+  width: 1440px;
+  width: 100vw;
 }
+
 .dash {
   font-weight: 600;
   font-size: 16px;
   line-height: 24px;
 }
+
 .records {
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
+  cursor: ƒ;
 }
+
 .top2main {
   display: flex;
   gap: 20px;
+  margin-top: 15px;
 }
+
 .buttonRec {
   background-color: #0166ff;
   display: flex;
@@ -178,56 +199,73 @@
   margin-top: 5px;
   color: white;
 }
+
 .buttonRecc {
   width: 51px;
   height: 24px;
 }
+
 .MMAIN {
   display: flex;
   justify-content: center;
   background-color: #f3f4f6;
   height: 100vh;
 }
+
 .dashboardOn {
   background-color: #0166ff;
+  justify-content: center;
 }
+
 .dashboardTwo {
   background-color: white;
   width: 384.12px;
   height: 219.66px;
   border-radius: 16px;
+  justify-content: center;
 }
+
 .MAAIINN {
   background-color: #f3f4f6;
 }
+
 .Stack {
   display: flex;
   flex-direction: row;
   margin-top: 50px;
   background-color: #f3f4f6;
+  justify-content: center;
 }
+
 .urinc {
   margin-top: 20px;
   margin-left: 30px;
 }
+
 .twotop {
   border: 0px, 0px, 1px, 0px;
 }
+
 .texttt {
   font-size: 36px;
   margin-top: 30px;
 }
+
 .textttt {
   margin-top: 10px;
 }
+
 .texttttt {
   margin-top: 30px;
 }
+
 .Stackk {
   display: flex;
   background-color: #f3f4f6;
   gap: 140px;
+  justify-content: center;
 }
+
 .middletwo {
   width: 698px;
   height: 56px;
@@ -235,18 +273,23 @@
   border: 0px, 0px, 1px, 0px;
   margin-top: 25px;
 }
+
 .middletwoo {
   width: 698px;
   height: 226px;
   background-color: blue;
 }
+
 .middlee {
   display: flex;
   gap: 45px;
+  justify-content: center;
 }
-.bottom{
+
+.bottom {
   margin-top: 30px;
 }
+
 .bluecircle {
   height: 40px;
   width: 40px;
@@ -257,17 +300,30 @@
   align-items: center;
   margin-left: 15px;
 }
+
 .containerList {
   display: flex;
   padding: 20px, 0px, 20px, 0px;
   gap: 15px;
   border-bottom: 1px solid gray;
+  justify-content: center;
+  width: 1440px;
+  background-color: white;
 }
-.transactionNoteTitle{
+
+.transactionNoteTitle {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  width: 1440px;
 }
-.lastrecords{
-  padding: 16px, 24px, 16px, 24px;
-  border-bottom: 1px solid gray;
+
+.lastrecords {
+  padding: 16px 24px;
+  border-bottom: 1px;
+  background-color: white;
+  width: 1440px;
+}
+.lasst {
+  margin-left: 303px;
 }
