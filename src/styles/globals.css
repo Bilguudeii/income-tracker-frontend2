@@ -5,6 +5,7 @@
   padding: 0px;
   box-sizing: border-box;
   font-family: "Roboto";
+  font-weight: 400;
 }
 
 .Main {
@@ -177,7 +178,6 @@
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
-  cursor: ƒ;
 }
 
 .top2main {
@@ -349,7 +349,7 @@
 .ttRecords{
   background-color: white;
   width: 282px;
-  height: 980px;
+  height: 880px;
   top: 96px;
   left: 120px;
   border-radius: 12px;
@@ -367,4 +367,33 @@
   height: 16px;
   border-radius: 50px;
   border: 1px solid rgba(55, 65, 81, 1);
+}
+.ttMUI{
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+}
+.ttName{
+  width: 19px;
+  height: 24px;
+  font-weight: 400px;
+  font-size: 16px;
+}
+.ttButton{
+  border: none;
+  background-color: white;
+  width: 97px;
+  height: 24px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.recordss{
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 24px;
+}
+.ttone{
+  gap: 24px;
 }

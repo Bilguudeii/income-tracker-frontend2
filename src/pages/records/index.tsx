@@ -1,7 +1,9 @@
+import axios from "axios";
 import { GeldIconLogo } from "../Icons/GeldLogo";
 import { Plus } from "../Icons/Plus";
 import Category from "../component/category";
 import { BluePlus } from "../Icons/BluePlus";
+import { useEffect, useState } from "react";
 
 const Records = () => {
   return (
@@ -25,30 +27,30 @@ const Records = () => {
         <div>
           <div className="ttRecords">
             <div>
-              <h2 className="tRecords">Records</h2>
-              <button className="ntb">
-                <Plus /> Add
-              </button>
+              <div className="ttone">
+                <h2 className="recordss">Records</h2>
+                <button className="ntb">
+                  <Plus /> Add
+                </button>
+              </div>
               <input className="ttInput" placeholder="Search" />
               <h3>Types</h3>
-              <div>
-                <input className="ttCheckBox" type="checkbox" /> <h3>All</h3>
+              <div className="ttMUI">
+                <input className="ttCheckBox" type="checkbox" /> <h3 className="ttName">All</h3>
               </div>
-              <div>
-                <input className="ttCheckBox" type="checkbox" /> <h3>Income</h3>
+              <div className="ttMUI">
+                <input className="ttCheckBox" type="checkbox" /> <h3 className="ttName">Income</h3>
               </div>
-              <div>
-                <input className="ttCheckBox" type="checkbox" /> <h3>Expense</h3>
+              <div className="ttMUI">
+                <input className="ttCheckBox" type="checkbox" /> <h3 className="ttName">Expense</h3>
               </div>
             </div>
             <div>
               <h2>Category</h2>
-              {[...Array(10)].map(() => (
-                <Category/>
-              ))}
+              <Category />
             </div>
             <div>
-                <BluePlus/> <h3>Add Category</h3>
+              <button className="ttButton"> <BluePlus /> Add Category</button>
             </div>
           </div>
           <div></div>
