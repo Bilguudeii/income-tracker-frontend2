@@ -155,7 +155,7 @@
   display: flex;
   gap: 50px;
   margin-top: 25px;
-  margin-bottom: 25px ;
+  margin-bottom: 25px;
 }
 
 .navbar {
@@ -207,6 +207,7 @@
 
 .MMAIN {
   display: flex;
+  flex-direction: row;
   justify-content: center;
   background-color: #f3f4f6;
   height: 100vh;
@@ -277,7 +278,7 @@
 .middletwoo {
   width: 698px;
   height: 226px;
-  background-color: blue;
+  background-color: white;
 }
 
 .middlee {
@@ -338,6 +339,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 20px;
+  margin-left: 10px;
 }
 .tRecords {
   width: 89px;
@@ -346,40 +349,43 @@
   size: 24px;
   line-height: 32px;
 }
-.ttRecords{
+.ttRecords {
   background-color: white;
   width: 282px;
-  height: 880px;
-  top: 96px;
-  left: 120px;
+  height: 750px;
+  margin-left: 400px;
+  margin-top: 40px;
   border-radius: 12px;
   border: 1px solid rgba(229, 231, 235, 1);
+  gap: 100px;
 }
-.ttInput{
+.ttInput {
   width: 250px;
   height: 32px;
   border-radius: 12px;
   border: 1px solid rgba(209, 213, 219, 1);
   padding: var(--t--spacing4);
 }
-.ttCheckBox{
+.ttCheckBox {
   width: 16px;
   height: 16px;
   border-radius: 50px;
   border: 1px solid rgba(55, 65, 81, 1);
 }
-.ttMUI{
+.ttMUI {
   display: flex;
   flex-direction: row;
   gap: 8px;
+  margin-top: 5px;
+  margin-left: 20px;
 }
-.ttName{
+.ttName {
   width: 19px;
   height: 24px;
   font-weight: 400px;
   font-size: 16px;
 }
-.ttButton{
+.ttButton {
   border: none;
   background-color: white;
   width: 97px;
@@ -389,11 +395,27 @@
   align-items: center;
   justify-content: center;
 }
-.recordss{
+.recordss {
+  margin-top: 30px;
+  margin-left: 10px;
   font-weight: 800;
   font-size: 24px;
   line-height: 24px;
 }
-.ttone{
+.ttone {
   gap: 24px;
+}
+.ttTypex {
+  margin-top: 15px;
+  margin-left: 10px;
+}
+.ttAAA {
+  margin-top: 30px;
+}
+.ttBarChart {
+  width: 100px;
+}
+.ttContainer {
+  display: flex;
+  flex-direction: row;
 }

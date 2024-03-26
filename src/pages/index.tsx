@@ -4,6 +4,8 @@ import DashBoardOne from "./component/DashBoardOne";
 import DashBoardTwo from "./component/DashBoardTwo";
 import { List } from "./component//list";
 import { useRouter } from "next/router";
+import { BarChart } from "./component/chart";
+import { Chaart } from "./component/chaart"
 
 const Home = () => {
   const router = useRouter()
@@ -39,13 +41,16 @@ const Home = () => {
               <div className="middletwo">
                 <h2>Income - Expense</h2>
               </div>
-              <div className="middletwoo">A</div>
+              <div className="middletwoo">
+              <BarChart />
+              </div>
             </div>
             <div>
               <div className="middletwo">
-                <h3>Income - Expense</h3>
               </div>
-              <div className="middletwoo">A</div>
+              <div className="middletwoo">
+                <Chaart/>
+              </div>
             </div>
           </div>
           <div className="bottom">

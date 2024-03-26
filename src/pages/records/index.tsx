@@ -1,18 +1,18 @@
-import axios from "axios";
 import { GeldIconLogo } from "../Icons/GeldLogo";
 import { Plus } from "../Icons/Plus";
+import { useRouter } from "next/router";
 import Category from "../component/category";
-import { BluePlus } from "../Icons/BluePlus";
-import { useEffect, useState } from "react";
+import { List } from "../component/list";
 
 const Records = () => {
+  const router = useRouter()
   return (
     <div className="MMAIN">
       <div className="MAIIIN">
         <div className="navbar">
           <div className="topmain">
             <GeldIconLogo />
-            <h2 className="dash">Dashboard</h2>
+            <h2 className="dash" onClick={() => router.push('/')}>Dashboard</h2>
             <div className="records">Records</div>
           </div>
           <div className="top2main">
@@ -24,36 +24,37 @@ const Records = () => {
             <img className="prof" src="prof.jpeg" />
           </div>
         </div>
-        <div>
-          <div className="ttRecords">
-            <div>
-              <div className="ttone">
-                <h2 className="recordss">Records</h2>
-                <button className="ntb">
-                  <Plus /> Add
-                </button>
+        <div className="ttContainer">
+          <div style={{display:'flex', alignItems:'center', width:'800px'}}>
+            <div className="ttRecords">
+              <div>
+                <div className="ttone">
+                  <h2 className="recordss">Records</h2>
+                  <button className="ntb">
+                    <Plus /> Add
+                  </button>
+                </div>
+                <h3 className="ttTypex">Types</h3>
+                <div className="ttMUI ttAAA">
+                  <input className="ttCheckBox" type="checkbox" />{" "}
+                  <h3 className="ttName">All</h3>
+                </div>
+                <div className="ttMUI">
+                  <input className="ttCheckBox" type="checkbox" />{" "}
+                  <h3 className="ttName">Income</h3>
+                </div>
+                <div className="ttMUI">
+                  <input className="ttCheckBox" type="checkbox" />{" "}
+                  <h3 className="ttName">Expense</h3>
+                </div>
               </div>
-              <input className="ttInput" placeholder="Search" />
-              <h3>Types</h3>
-              <div className="ttMUI">
-                <input className="ttCheckBox" type="checkbox" /> <h3 className="ttName">All</h3>
-              </div>
-              <div className="ttMUI">
-                <input className="ttCheckBox" type="checkbox" /> <h3 className="ttName">Income</h3>
-              </div>
-              <div className="ttMUI">
-                <input className="ttCheckBox" type="checkbox" /> <h3 className="ttName">Expense</h3>
+              <div>
+                <h2 className="ttTypex">Category</h2>
+                <Category />
               </div>
             </div>
-            <div>
-              <h2>Category</h2>
-              <Category />
-            </div>
-            <div>
-              <button className="ttButton"> <BluePlus /> Add Category</button>
-            </div>
+            <List />
           </div>
-          <div></div>
         </div>
       </div>
     </div>

@@ -42,9 +42,9 @@ const data = {
   ],
 };
 
-
-function Dashboard() {
+export function BarChart() {
   return (
+    <div style={{ width: "699px", height:"200px" }}>
       <Bar
         data={data}
         options={{
@@ -53,7 +53,13 @@ function Dashboard() {
               display: false,
             },
           },
+          scales: {
+            y: {
+              beginAtZero: true,
+            },
+          },
         }}
       />
+    </div>
   );
 }

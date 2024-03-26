@@ -8,9 +8,9 @@ const Category = () => {
     ];
     const mappedcategories: Category[] = categories.map(Category => ({ label: Category}));
     return(
-        <div style={{display:'flex', flexDirection: 'column', gap:'12px'}}>
+        <div style={{display:'flex', flexDirection: 'column', gap:'10px'}}>
             {mappedcategories.map(Category => (
-                <div key={Category.label} style={{display:"flex", gap:"10px", paddingLeft:"30px "}}>
+                <div key={Category.label} style={{display:"flex", gap:"10px", paddingLeft:"20px ",marginTop:"10px"}}>
                     <Checked /> {Category.label}
                 </div>
             ))}
