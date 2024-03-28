@@ -2,17 +2,19 @@ import { GeldIconLogo } from "../Icons/GeldLogo";
 import { Plus } from "../Icons/Plus";
 import { useRouter } from "next/router";
 import Category from "../component/category";
-import { List } from "../component/list";
+import { RecordList } from "../component/recordList";
 
 const Records = () => {
-  const router = useRouter()
+  const router = useRouter();
   return (
     <div className="MMAIN">
       <div className="MAIIIN">
         <div className="navbar">
           <div className="topmain">
             <GeldIconLogo />
-            <h2 className="dash" onClick={() => router.push('/')}>Dashboard</h2>
+            <h2 className="dash" onClick={() => router.push("/")}>
+              Dashboard
+            </h2>
             <div className="records">Records</div>
           </div>
           <div className="top2main">
@@ -25,7 +27,9 @@ const Records = () => {
           </div>
         </div>
         <div className="ttContainer">
-          <div style={{display:'flex', alignItems:'center', width:'800px'}}>
+          <div
+            style={{ display: "flex", alignItems: "center", width: "800px" }}
+          >
             <div className="ttRecords">
               <div>
                 <div className="ttone">
@@ -53,7 +57,7 @@ const Records = () => {
                 <Category />
               </div>
             </div>
-            <List />
+            <RecordList />
           </div>
         </div>
       </div>
