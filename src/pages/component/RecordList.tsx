@@ -12,13 +12,11 @@ export const RecordList = () => {
     };
     fetchData();
   }, []);
-  console.log(transactions)
+  console.log(transactions);
   return (
-    <div
-      style={{
-      }}
-    > <div className="lasst">
-        <div className="ttlast">Last records</div>
+    <div style={{}}>
+      {" "}
+      <div className="ttlasst">
         {transactions.map((transaction, index) => (
           <RecordListItem key={index} transaction={transaction} />
         ))}

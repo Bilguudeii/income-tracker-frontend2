@@ -326,7 +326,13 @@
   width: 1440px;
 }
 .lasst {
-  margin-left: 303px;
+  margin-left: 400px;
+}
+.ttlasst{
+  display: flex;
+  margin-left: 26px;
+  flex-direction: column;
+  gap: 10px;
 }
 .ntb {
   background-color: #0166ff;
@@ -421,11 +427,11 @@
 }
 .containerListt {
   display: flex;
-  padding: 20px, 0px, 20px, 0px;
+  padding: 12px, 24px, 12px, 24px;
   gap: 15px;
-  border-bottom: 1px solid gray;
+  border-radius: 12px;
   justify-content: center;
-  width: 1200px;
+  width: 894px;
   background-color: white;
 }
 
@@ -434,10 +440,22 @@
   flex-direction: column;
   justify-content: center;
   width: 1200px;
+  margin-bottom: 7px;
 }
 .ttlast {
   padding: 16px 24px;
   border-bottom: 1px;
   background-color: white;
-  width: 100px;
+  width: 1200px;
+  gap: 10px;
+}
+.ttbluecircle{
+  height: 40px;
+  width: 60px;
+  border-radius: 50%;
+  background-color: rgba(1, 102, 255, 1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 15px;
 }

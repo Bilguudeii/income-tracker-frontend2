@@ -16,7 +16,7 @@ export const RecordListItem = ({ transaction }: { transaction: Transcation }) =>
   console.log(transaction);
   return (
     <div className="containerListt">
-      <div className="bluecircle">
+      <div className="ttbluecircle">
         <Home />
       </div>
       <div className="transactionNoteTitlet">
