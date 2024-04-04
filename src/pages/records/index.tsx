@@ -2,10 +2,16 @@ import { GeldIconLogo } from "../Icons/GeldLogo";
 import { Plus } from "../Icons/Plus";
 import { useRouter } from "next/router";
 import Category from "../component/category";
-import { RecordList } from "../component/recordList";
+import { RecordList } from "../component/RecordList";
+import { RecordModal } from "../component/RecordModal";
+import { useState } from "react";
 
 const Records = () => {
   const router = useRouter();
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+  
   return (
     <div className="MMAIN">
       <div className="MAIIIN">
@@ -34,10 +40,11 @@ const Records = () => {
               <div>
                 <div className="ttone">
                   <h2 className="recordss">Records</h2>
-                  <button className="ntb">
+                  <button className="ntb" onClick={handleOpen}>
                     <Plus /> Add
                   </button>
-                </div>
+                  <RecordModal handleClose={handleClose} open={open}/>
+                </div> 
                 <h3 className="ttTypex">Types</h3>
                 <div className="ttMUI ttAAA">
                   <input className="ttCheckBox" type="checkbox" />{" "}
