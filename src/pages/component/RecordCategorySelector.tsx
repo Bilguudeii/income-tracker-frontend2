@@ -13,7 +13,7 @@ export const RecordCategorySelector = () => {
   };
 
   return (
-    <Box sx={{ minWidth: 120 }}>
+    <Box sx={{ width: 348 }}>
       <FormControl fullWidth>
         <InputLabel id="demo-simple-select-label">Age</InputLabel>
         <Select
