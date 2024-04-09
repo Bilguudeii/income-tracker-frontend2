@@ -1,10 +1,13 @@
+/* eslint-disable max-lines */
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
-import { TextField } from "@mui/material";
+import { SelectChangeEvent } from "@mui/material";
 import { RecordCategorySelector } from "./RecordCategorySelector";
-import { SetStateAction, useState } from "react";
+import { useState } from "react";
 import { RecordToggleButton } from "./RecordToggleButton";
+import { Plus } from "../Icons/Plus";
+import axios from "axios";
 
 const style = {
   position: "absolute",
@@ -19,16 +22,70 @@ const style = {
   p: 4,
 };
 
-export const RecordModal = ({ handleClose, open }) => {
-  const [text, setText] = useState("");
+export const RecordModal = () => {
+  const [open, setOpen] = useState(false);
+  const [transactionType, setTransactionType] = useState("Expense");
+  const [amount, setAmount] = useState("");
+  const [amountError, setAmountError] = useState("");
+  const [category, setCategory] = useState("");
+  const [note, setNote] = useState("");
+  const [noteError, setNoteError] = useState("");
+  const [required, setRequired] = useState("");
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
 
-  const handleChange = (event: {
-    target: { value: SetStateAction<string> };
-  }) => {
-    setText(event.target.value);
+  const handleAmount = (event: SelectChangeEvent) => {
+    const amount = event.target.value;
+    if (amount === "") {
+      setAmountError("Amount is empty");
+    } else {
+      setAmount(event.target.value);
+    }
+  };
+
+  const handleNote = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+    const note = event.target.value;
+    if (note === "") {
+      setNoteError("Note is empty");
+    } else {
+      setNote(note);
+    }
+  };
+  const handleCategory = (event: SelectChangeEvent) => {
+    setCategory(event.target.value);
+  };
+
+  const addTransaction = async () => {
+    try {
+      const response = await axios.post(
+        "http://localhost:8080/create-transaction",
+        {
+          userId:'123',
+          category,
+          amount: Number(amount),
+          note,
+          transactionType,
+        }
+      );
+      console.log(response);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const handleAddTransaction = () => {
+    if (amount === "") {
+      setRequired("AAAAA");
+    } else {
+      addTransaction();
+      handleClose();
+    }
   };
   return (
     <div>
+      <button className="ntb" onClick={handleOpen}>
+        <Plus /> Add
+      </button>
       <Modal
         open={open}
         onClose={handleClose}
@@ -41,15 +98,36 @@ export const RecordModal = ({ handleClose, open }) => {
               <Typography id="modal-modal-title" variant="h6" component="h2">
                 Add Record
               </Typography>
-              <RecordToggleButton />
-              <TextField
-                label="Amount"
-                variant="outlined"
+              <RecordToggleButton
+                transactionType={transactionType}
+                setTransactionType={setTransactionType}
+              />
+              <input
+                value={amount}
+                placeholder="Amount"
+                onChange={handleAmount}
                 style={{ width: "348px", height: "76px" }}
               />
-              <Typography style={{ display: "flex", gap: "12px",marginBottom:"10px"}} variant="body1"> Category </Typography>
-              <RecordCategorySelector />
-              <div style={{ display: "flex", gap: "12px",marginBottom:"10px" ,marginTop :"10px" }}>
+              <div>{amountError}</div>
+              <Typography
+                style={{ display: "flex", gap: "12px", marginBottom: "10px" }}
+                variant="body1"
+              >
+                {" "}
+                Category{" "}
+              </Typography>
+              <RecordCategorySelector
+                handleCategory={handleCategory}
+                category={category}
+              />
+              <div
+                style={{
+                  display: "flex",
+                  gap: "12px",
+                  marginBottom: "10px",
+                  marginTop: "10px",
+                }}
+              >
                 <input
                   style={{
                     width: "168px",
@@ -59,17 +137,9 @@ export const RecordModal = ({ handleClose, open }) => {
                   }}
                   type="date"
                 />
-                <input
-                  style={{
-                    width: "168px",
-                    height: "48px",
-                    borderRadius: "5px",
-                    border: "1px solid #adadad",
-                  }}
-                  type="time"
-                />
               </div>
               <button
+                onClick={handleAddTransaction}
                 style={{
                   width: "348px",
                   height: "40px",
@@ -81,16 +151,18 @@ export const RecordModal = ({ handleClose, open }) => {
               >
                 Add Record
               </button>
+              <div>{required}</div>
             </div>
             <div>
               <Typography variant="body1"> Note </Typography>
               <textarea
-                value={text}
-                onChange={handleChange}
+                value={note}
+                onChange={handleNote}
                 rows={20}
                 cols={50}
                 placeholder="Write here "
               />
+              <div>{noteError}</div>
             </div>
           </div>
         </Box>

@@ -1,27 +1,26 @@
-import * as React from 'react';
-import ToggleButton from '@mui/material/ToggleButton';
-import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
+import * as React from "react";
+import ToggleButton from "@mui/material/ToggleButton";
+import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
 
-export const RecordToggleButton = () => {
-    const [alignment, setAlignment] = React.useState('web');
+export const RecordToggleButton = ({ setTransactionType, transactionType }) => {
 
-    const handleChange = (
-      event: React.MouseEvent<HTMLElement>,
-      newAlignment: string,
-    ) => {
-      setAlignment(newAlignment);
-    };
+  const handleChange = (
+    event: React.MouseEvent<HTMLElement>,
+    newAlignment: string
+  ) => {
+    setTransactionType(newAlignment);
+  };
 
   return (
     <ToggleButtonGroup
       color="primary"
-      value={alignment}
+      value={transactionType}
       exclusive
       onChange={handleChange}
       aria-label="Platform"
     >
-      <ToggleButton value="Expense">Expense</ToggleButton>
-      <ToggleButton value="Income">Income</ToggleButton>
+      <ToggleButton value="expense">Expense</ToggleButton>
+      <ToggleButton value="income">Income</ToggleButton>
     </ToggleButtonGroup>
   );
-}
+};
