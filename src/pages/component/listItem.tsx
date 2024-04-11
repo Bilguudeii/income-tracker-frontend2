@@ -1,4 +1,6 @@
 import { Home } from "../Icons/home";
+import { EditLogo } from "../Icons/editLogo"
+import { DeleteLogo } from "../Icons/deleteIcon"
 
 type Transcation = {
   amount: number;
@@ -23,6 +25,10 @@ export const ListItem = ({ transaction }: { transaction: Transcation }) => {
         {transaction.transactionTitle}
 
         {transaction.note}
+      </div>
+      <div className="ttNtbContainer">
+        <button className="ttNtb">  <EditLogo/> </button>
+        <button className="ttNtb">  <DeleteLogo/> </button>
       </div>
       <div>
         {transaction.amount}

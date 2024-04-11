@@ -19,8 +19,8 @@ export const RecordToggleButton = ({ setTransactionType, transactionType }) => {
       onChange={handleChange}
       aria-label="Platform"
     >
-      <ToggleButton value="expense">Expense</ToggleButton>
-      <ToggleButton value="income">Income</ToggleButton>
+      <ToggleButton className="ntbExpense ntbToggle" value="expense">Expense</ToggleButton>
+      <ToggleButton className="ntbIncome ntbToggle" value="income">Income</ToggleButton>
     </ToggleButtonGroup>
   );
 };

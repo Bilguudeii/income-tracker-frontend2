@@ -273,12 +273,14 @@
   background-color: white;
   border: 0px, 0px, 1px, 0px;
   margin-top: 25px;
+  border-radius: 10px 10px 0px 0px;
 }
 
 .middletwoo {
   width: 698px;
   height: 226px;
   background-color: white;
+  border-radius: 0px 0px 10px 10px;
 }
 
 .middlee {
@@ -304,9 +306,10 @@
 
 .containerList {
   display: flex;
-  padding: 20px, 0px, 20px, 0px;
+  padding-top: 15px;
+  padding-bottom: 15px;
   gap: 15px;
-  border-bottom: 1px solid gray;
+  border-top: 1px solid rgb(148, 148, 148);
   justify-content: center;
   width: 1440px;
   background-color: white;
@@ -324,9 +327,12 @@
   border-bottom: 1px;
   background-color: white;
   width: 1440px;
+  border-radius: 10px 10px 0px 0px;
 }
 .lasst {
   margin-left: 400px;
+  overflow:scroll; height:406px;
+  border-radius: 10px;
 }
 .ttlasst{
   display: flex;
@@ -346,7 +352,6 @@
   justify-content: center;
   align-items: center;
   margin-top: 20px;
-  margin-left: px;
 }
 .tRecords {
   width: 89px;
@@ -357,7 +362,7 @@
 }
 .ttRecords {
   background-color: white;
-  width: 282px;
+  width: 252px;
   height: 750px;
   margin-left: 400px;
   margin-top: 40px;
@@ -427,11 +432,14 @@
 }
 .containerListt {
   display: flex;
-  padding: 12px, 24px, 12px, 24px;
+  padding-top: 12px;
+  padding-right: 24px;
+  padding-bottom: 12px;
+  padding-left: 24px;
   gap: 15px;
   border-radius: 12px;
   justify-content: center;
-  width: 894px;
+  width: 1150px;
   background-color: white;
 }
 
@@ -439,8 +447,8 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 1200px;
-  margin-bottom: 7px;
+  width: 1200px;  
+  justify-content: center;
 }
 .ttlast {
   padding: 16px 24px;
@@ -451,11 +459,38 @@
 }
 .ttbluecircle{
   height: 40px;
-  width: 60px;
+  width: 40px;
   border-radius: 50%;
   background-color: rgba(1, 102, 255, 1);
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 15px;
+}
+.ttNtb{
+  border: none;
+  background-color: white;
+}
+.ttNtbContainer{
+  display: flex;
+  align-items: center;
+}
+.ntbContainer{
+  display: flex;
+  justify-content: center;
+
+}
+.ttAmount{
+  display: flex;
+  align-items: center;
+}
+.ttBlueCircleContainer{
+  display: flex;
+  justify-content: center;
+  margin-top: 3px;
+}
+.ntbExpense{
+border-radius: 20px;
+}
+.ntbToggle{
+  width: 175px;
 }

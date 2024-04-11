@@ -7,9 +7,9 @@ import { Select } from "@mui/material";
 
 export const RecordCategorySelector = ({ handleCategory, category }) => {
   return (
-    <Box sx={{ width: 348 }}>
+    <Box sx={{ width: "348px" , height: "66px" }}>
       <FormControl fullWidth>
-        <InputLabel id="demo-simple-select-label">Age</InputLabel>
+        <InputLabel id="demo-simple-select-label">Category</InputLabel>
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
@@ -20,7 +20,11 @@ export const RecordCategorySelector = ({ handleCategory, category }) => {
           <MenuItem value={"bills"}>Bills</MenuItem>
           <MenuItem value={"clothing"}>Clothing</MenuItem>
           <MenuItem value={"shopping"}>Shopping</MenuItem>
-          <MenuItem value={"food"}>Food</MenuItem>
+          <MenuItem value={"housing"}>Housing</MenuItem>
+          <MenuItem value={"transportation"}>Transportation</MenuItem>
+          <MenuItem value={"vehicle"}>Vehicle</MenuItem>
+          <MenuItem value={"investments"}>Investments</MenuItem>
+          <MenuItem value={"others"}>Others</MenuItem>
         </Select>
       </FormControl>
     </Box>

@@ -8,6 +8,7 @@ import { RecordModal } from "../component/RecordModal";
 const Records = () => {
   const router = useRouter();
   
+  
   return (
     <div className="MMAIN">
       <div className="MAIIIN">
@@ -20,7 +21,7 @@ const Records = () => {
             <div className="records">Records</div>
           </div>
           <div className="top2main">
-            <div>
+            <div className="ntbContainer">
               <button className="buttonRec">
                 <Plus /> <h3 className="buttonRecc">Record</h3>
               </button>

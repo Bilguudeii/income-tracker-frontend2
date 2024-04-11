@@ -104,11 +104,11 @@ export const RecordModal = () => {
               />
               <input
                 value={amount}
-                placeholder="Amount"
+                placeholder="₮ 000.00"
                 onChange={handleAmount}
-                style={{ width: "348px", height: "76px" }}
+                style={{marginTop:"15px" , width: "348px", height: "56px", borderRadius:"5px" , border:"1px solid rgba(209, 213, 219, 1)", paddingLeft: "15px", }}
               />
-              <div>{amountError}</div>
+              <div style={{display:"flex", flexDirection:"row"}}><h3>{amountError}</h3></div>
               <Typography
                 style={{ display: "flex", gap: "12px", marginBottom: "10px" }}
                 variant="body1"
@@ -130,10 +130,12 @@ export const RecordModal = () => {
               >
                 <input
                   style={{
-                    width: "168px",
-                    height: "48px",
+                    width: "348px",
+                    height: "66px",
                     borderRadius: "5px",
                     border: "1px solid #adadad",
+                    paddingLeft: "15px",
+                    paddingRight: "10px",
                   }}
                   type="date"
                 />
@@ -161,6 +163,9 @@ export const RecordModal = () => {
                 rows={20}
                 cols={50}
                 placeholder="Write here "
+                style={{paddingLeft: "15px",
+                  paddingTop: "15px"
+                }}
               />
               <div>{noteError}</div>
             </div>
