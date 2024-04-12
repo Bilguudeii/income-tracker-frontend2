@@ -1,40 +1,38 @@
-import React, { useState } from "react";
-import axios from "axios";
-import { GeldIcon } from "../Icons/Geld";
-import { useRouter } from "next/router";
-
+import React, { useState } from "react"
+import axios from "axios"
+import { GeldIcon } from "../Icons/Geld"
+import { useRouter } from "next/router"
 
 const SignUpForm = () => {
-  const [username, setUsername] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [rePassword, setRePassword] = useState("");
-  const router = useRouter();
+  const [username, setUsername] = useState("")
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+  const [rePassword, setRePassword] = useState("")
+  const router = useRouter()
 
   const createUser = async () => {
     const res = await axios.post("http://localhost:8080/signup", {
       username,
       email,
       password,
-    });
-    console.log({res});
-    router.push("/login");
-  };
+    })
+    router.push("/login")
+  }
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
+    e.preventDefault()
     if (password !== rePassword) {
-      alert("Passwords do not match");
-      return;
+      alert("Passwords do not match")
+      return
     }
     try {
-      await createUser();
-      alert("User created successfully!");
+      await createUser()
+      alert("User created successfully!")
     } catch (error) {
-      console.error(error);
-      alert("Error creating user. Please try again.");
+      console.error(error)
+      alert("Error creating user. Please try again.")
     }
-  };
+  }
 
   return (
     <div className="Main">
@@ -42,10 +40,7 @@ const SignUpForm = () => {
         <GeldIcon />
         <h3 className="ngdehug">Create Geld account</h3>
         <p className="hoyrdhUg">Sign up below to create your Wallet account</p>
-        <div
-          onSubmit={handleSubmit}
-          className="aaaaD"
-        >
+        <div onSubmit={handleSubmit} className="aaaaD">
           <input
             placeholder="Username"
             type="text"
@@ -81,7 +76,7 @@ const SignUpForm = () => {
       </div>
       <div className="nuurniital"></div>
     </div>
-  );
-};
+  )
+}
 
-export default SignUpForm;
+export default SignUpForm

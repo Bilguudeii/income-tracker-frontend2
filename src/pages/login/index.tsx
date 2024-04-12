@@ -1,25 +1,24 @@
-import React, { useState } from "react";
-import { GeldIcon } from "../Icons/Geld";
-import axios from "axios";
-import { useRouter } from "next/router";
+import React, { useState } from "react"
+import { GeldIcon } from "../Icons/Geld"
+import axios from "axios"
+import { useRouter } from "next/router"
 
 const Login = () => {
-  const router = useRouter();
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const router = useRouter()
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
 
   const loginUser = async (email: string, password: string) => {
     const res = await axios.post("http://localhost:8080/login", {
       email: email,
       password: password,
-    });
-    console.log(res);
+    })
     if (res.status === 200) {
-      localStorage.setItem("user", "true");
-      localStorage.setItem("userId", JSON.stringify(res.data._id));
+      localStorage.setItem("user", "true")
+      localStorage.setItem("userId", JSON.stringify(res.data._id))
     }
-    router.push("/");
-  };
+    router.push("/")
+  }
 
   return (
     <>
@@ -44,8 +43,8 @@ const Login = () => {
             type="submit"
             onClick={() => {
               loginUser(email, password).catch((error) => {
-                console.error("Failed to log in:", error);
-              });
+                console.error("Failed to log in:", error)
+              })
             }}
           >
             Log in
@@ -58,7 +57,7 @@ const Login = () => {
         <div className="nuurniital"></div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default Login;
+export default Login

@@ -9,8 +9,6 @@
 }
 
 .Main {
-  width: 100vw;
-  height: 100vh;
   display: flex;
   flex-direction: row;
 }
@@ -142,9 +140,6 @@
   flex-direction: column;
 }
 
-.MAIIIN {
-}
-
 .prof {
   width: 40px;
   height: 40px;
@@ -160,11 +155,9 @@
 
 .navbar {
   display: flex;
-  justify-content: center;
-  gap: 1000px;
-  padding: 16px, 120px, 36px, 120px;
+  justify-content: space-between;
+  padding: 0 6vw;
   background-color: white;
-  width: 1440px;
   width: 100vw;
 }
 
@@ -208,9 +201,10 @@
 .MMAIN {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
   background-color: #f3f4f6;
-  height: 100vh;
+  padding: 3vw 6vw;
+  gap: 5vw;
 }
 
 .dashboardOn {
@@ -331,56 +325,59 @@
 }
 .lasst {
   margin-left: 400px;
-  overflow:scroll; height:406px;
+  overflow: scroll;
+  height: 406px;
   border-radius: 10px;
 }
-.ttlasst{
+.ttlasst {
   display: flex;
-  margin-left: 26px;
   flex-direction: column;
   gap: 10px;
+  width: 100%;
 }
 .ntb {
   background-color: #0166ff;
-  width: 250px;
-  height: 32px;
   border-radius: 20px;
-  gap: 4px;
   border: none;
   color: white;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 20px;
+  gap: 5px;
+  font-weight: bold;
+  padding: 10px 100px;
+  cursor: pointer;
+  margin-top: 10px;
 }
-.tRecords {
-  width: 89px;
-  height: 32px;
+
+.Title {
   font-weight: 600px;
-  size: 24px;
+  font-size: 24px;
   line-height: 32px;
 }
 .ttRecords {
   background-color: white;
-  width: 252px;
-  height: 750px;
-  margin-left: 400px;
-  margin-top: 40px;
   border-radius: 12px;
+  padding: 30px 20px;
   border: 1px solid rgba(229, 231, 235, 1);
-  gap: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 .ttInput {
-  width: 250px;
-  height: 32px;
   border-radius: 12px;
   border: 1px solid rgba(209, 213, 219, 1);
   padding: var(--t--spacing4);
 }
+.Title-Small {
+  font-weight: 600px;
+  font-size: 18px;
+  line-height: 32px;
+}
 .ttCheckBox {
   width: 16px;
   height: 16px;
-  border-radius: 50px;
+  border-radius: 50%;
   border: 1px solid rgba(55, 65, 81, 1);
 }
 .ttMUI {
@@ -388,13 +385,9 @@
   flex-direction: row;
   gap: 8px;
   margin-top: 5px;
-  margin-left: 20px;
 }
-.ttName {
-  width: 19px;
-  height: 24px;
-  font-weight: 400px;
-  font-size: 16px;
+.Type {
+  margin: 20px 20px;
 }
 .ttButton {
   border: none;
@@ -406,40 +399,22 @@
   align-items: center;
   justify-content: center;
 }
-.recordss {
-  margin-top: 30px;
-  margin-left: 10px;
-  font-weight: 800;
-  font-size: 24px;
-  line-height: 24px;
-}
 .ttone {
   gap: 24px;
 }
-.ttTypex {
-  margin-top: 15px;
-  margin-left: 10px;
-}
-.ttAAA {
-  margin-top: 30px;
-}
+
 .ttBarChart {
   width: 100px;
 }
-.ttContainer {
-  display: flex;
-  flex-direction: row;
-}
+
 .containerListt {
   display: flex;
-  padding-top: 12px;
-  padding-right: 24px;
-  padding-bottom: 12px;
-  padding-left: 24px;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 12px 24px;
   gap: 15px;
+  width: 100%;
   border-radius: 12px;
-  justify-content: center;
-  width: 1150px;
   background-color: white;
 }
 
@@ -447,7 +422,6 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 1200px;  
   justify-content: center;
 }
 .ttlast {
@@ -457,7 +431,7 @@
   width: 1200px;
   gap: 10px;
 }
-.ttbluecircle{
+.ttbluecircle {
   height: 40px;
   width: 40px;
   border-radius: 50%;
@@ -466,31 +440,28 @@
   justify-content: center;
   align-items: center;
 }
-.ttNtb{
+.ttNtb {
   border: none;
   background-color: white;
 }
-.ttNtbContainer{
+.flex-center {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  align-items: "center";
+}
+.ttAmount {
   display: flex;
   align-items: center;
 }
-.ntbContainer{
-  display: flex;
-  justify-content: center;
-
-}
-.ttAmount{
-  display: flex;
-  align-items: center;
-}
-.ttBlueCircleContainer{
+.ttBlueCircleContainer {
   display: flex;
   justify-content: center;
   margin-top: 3px;
 }
-.ntbExpense{
-border-radius: 20px;
+.ntbExpense {
+  border-radius: 20px;
 }
-.ntbToggle{
+.ntbToggle {
   width: 175px;
 }

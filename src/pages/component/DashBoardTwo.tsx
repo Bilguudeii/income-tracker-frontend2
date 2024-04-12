@@ -1,5 +1,5 @@
-import * as React from "react";
-import { Upside } from "../Icons/Upside";
+import * as React from "react"
+import { Upside } from "../Icons"
 
 function DashBoardOne() {
   return (
@@ -17,7 +17,7 @@ function DashBoardOne() {
         </h3>
       </div>
     </div>
-  );
+  )
 }
 
-export default DashBoardOne;
+export default DashBoardOne

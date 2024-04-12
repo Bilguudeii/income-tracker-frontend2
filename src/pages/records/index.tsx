@@ -1,17 +1,19 @@
-import { GeldIconLogo } from "../Icons/GeldLogo";
-import { Plus } from "../Icons/Plus";
-import { useRouter } from "next/router";
-import Category from "../component/category";
-import { RecordList } from "../component/RecordList";
-import { RecordModal } from "../component/RecordModal";
+import { GeldIconLogo } from "../Icons/GeldLogo"
+import { Plus } from "../Icons/Plus"
+import { useRouter } from "next/router"
+import Category from "../component/category"
+import { RecordList } from "../component/RecordList"
+import { RecordModal } from "../component/RecordModal"
+import axios, { AxiosRequestConfig } from "axios"
+import { useState } from "react"
 
 const Records = () => {
-  const router = useRouter();
-  
-  
+  const router = useRouter()
+  const [releod, setReleod] = useState("")
   return (
-    <div className="MMAIN">
+    <div>
       <div className="MAIIIN">
+        {/* --------- NAVBAR ---------- */}
         <div className="navbar">
           <div className="topmain">
             <GeldIconLogo />
@@ -29,41 +31,37 @@ const Records = () => {
             <img className="prof" src="prof.jpeg" />
           </div>
         </div>
-        <div className="ttContainer">
-          <div
-            style={{ display: "flex", alignItems: "center", width: "800px" }}
-          >
-            <div className="ttRecords">
-              <div>
-                <div className="ttone">
-                  <h2 className="recordss">Records</h2>
-                  <RecordModal/>
-                </div> 
-                <h3 className="ttTypex">Types</h3>
-                <div className="ttMUI ttAAA">
-                  <input className="ttCheckBox" type="checkbox" />{" "}
+        <div className=" MMAIN">
+          <div className="ttRecords">
+            <h2 className="Title">Records</h2>
+            <RecordModal type="add" id="" setReleod={setReleod} />
+            <div>
+              <h3 className="Title-Small">Types</h3>
+              <div className="Type">
+                <div className="ttMUI">
+                  <input className="ttCheckBox" type="checkbox" />
                   <h3 className="ttName">All</h3>
                 </div>
                 <div className="ttMUI">
-                  <input className="ttCheckBox" type="checkbox" />{" "}
+                  <input className="ttCheckBox" type="checkbox" />
                   <h3 className="ttName">Income</h3>
                 </div>
                 <div className="ttMUI">
-                  <input className="ttCheckBox" type="checkbox" />{" "}
+                  <input className="ttCheckBox" type="checkbox" />
                   <h3 className="ttName">Expense</h3>
                 </div>
               </div>
-              <div>
-                <h2 className="ttTypex">Category</h2>
-                <Category />
-              </div>
             </div>
-            <RecordList />
+            <div>
+              <h2 className="Title-Small">Category</h2>
+              <Category />
+            </div>
           </div>
+          <RecordList setReleod={setReleod} releod={releod} />
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Records;
+export default Records

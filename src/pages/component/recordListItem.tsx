@@ -1,74 +1,74 @@
-import { Home } from "../Icons/home";
-import { EditLogo } from "../Icons/editLogo";
-import { DeleteLogo } from "../Icons/deleteIcon";
-import axios from "axios";
-
-type Transcation = {
-  amount: number;
-  category: string;
-  createAt: Date | string;
-  note: string;
-  transactionTitle: string;
-  transactionType: string;
-  userId: string;
-  __v: number;
-  _id: string;
-};
+import { Home, EditLogo, DeleteLogo } from "../Icons"
+import axios from "axios"
+import { Transcation } from "../interfaces"
+import { RecordModal } from "./RecordModal"
 
 export const RecordListItem = ({
   transaction,
+  setReleod,
 }: {
-  transaction: Transcation;
+  transaction: Transcation
+  setReleod: any
 }) => {
-  console.log(transaction);
-
   const deleteTransaction = async () => {
-    const Transactionid = transaction._id;
+    const Transactionid = transaction._id
     try {
       const response = await axios.delete(
         `http://localhost:8080/delete-transaction/${Transactionid}`
-      );
-      console.log(response);
+      )
+      alert("deleted transaction")
+      setReleod && setReleod(response)
     } catch (error) {
-      console.log(error);
+      throw error
     }
-  };
+  }
 
   interface ColorMap {
-    [key: string]: string;
+    [key: string]: string
   }
   const InExColors: ColorMap = {
     income: "#16A34A",
     expense: "#FF0101",
-  };
+  }
   const InExDiff: ColorMap = {
     income: "",
     expense: "-",
-  };
+  }
 
   return (
     <div className="containerListt">
-      <div className="ttBlueCircleContainer">
-        <div className="ttbluecircle">
-          <Home />
+      <div className="flex-center">
+        <div className="ttBlueCircleContainer">
+          <div className="ttbluecircle">
+            <Home />
+          </div>
+        </div>
+        <div className="transactionNoteTitlet">
+          {transaction?.transactionTitle}
+          {transaction?.note}
         </div>
       </div>
-      <div className="transactionNoteTitlet">
-        {transaction.transactionTitle}
-
-        {transaction.note}
+      <div className="flex-center">
+        <div>
+          <button className="ttNtb">
+            <RecordModal
+              type="edit"
+              id={transaction._id}
+              setReleod={setReleod}
+            />
+          </button>
+          <button onClick={deleteTransaction} className="ttNtb">
+            <DeleteLogo />
+          </button>
+        </div>
+        <div
+          style={{ color: InExColors[transaction.transactionType] }}
+          className="ttAmount"
+        >
+          {InExDiff[transaction.transactionType]}
+          {transaction.amount}₮
+        </div>
       </div>
-      <div className="ttNtbContainer">
-        <button className="ttNtb">
-          {" "}
-          <EditLogo />{" "}
-        </button>
-        <button onClick={deleteTransaction} className="ttNtb">
-          {" "}
-          <DeleteLogo />{" "}
-        </button>
-      </div>
-      <div style={{ color:InExColors[transaction.transactionType]}} className="ttAmount">{InExDiff[transaction.transactionType]}{transaction.amount}₮</div>
     </div>
-  );
-};
+  )
+}

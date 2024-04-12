@@ -1,13 +1,13 @@
 /* eslint-disable max-lines */
-import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
-import Modal from "@mui/material/Modal";
-import { SelectChangeEvent } from "@mui/material";
-import { RecordCategorySelector } from "./RecordCategorySelector";
-import { useState } from "react";
-import { RecordToggleButton } from "./RecordToggleButton";
-import { Plus } from "../Icons/Plus";
-import axios from "axios";
+import Box from "@mui/material/Box"
+import Typography from "@mui/material/Typography"
+import Modal from "@mui/material/Modal"
+import { SelectChangeEvent } from "@mui/material"
+import { RecordCategorySelector } from "./RecordCategorySelector"
+import { useEffect, useState } from "react"
+import { RecordToggleButton } from "./RecordToggleButton"
+import { EditLogo, Plus } from "../Icons"
+import axios from "axios"
 
 const style = {
   position: "absolute",
@@ -16,76 +16,116 @@ const style = {
   transform: "translate(-50%, -50%)",
   width: 800,
   bgcolor: "background.paper",
-  border: "2px solid #000",
+  border: "0.5px solid #000",
   boxShadow: 24,
   borderRadius: 8,
   p: 4,
-};
+}
 
-export const RecordModal = () => {
-  const [open, setOpen] = useState(false);
-  const [transactionType, setTransactionType] = useState("Expense");
-  const [amount, setAmount] = useState("");
-  const [amountError, setAmountError] = useState("");
-  const [category, setCategory] = useState("");
-  const [note, setNote] = useState("");
-  const [noteError, setNoteError] = useState("");
-  const [required, setRequired] = useState("");
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+export const RecordModal = ({
+  type,
+  id,
+  setReleod,
+}: {
+  type: string
+  id: any
+  setReleod?: any
+}) => {
+  const [plusTransaction, setAddTransaction] = useState<any>({
+    category: "",
+    amount: "",
+    note: "",
+    transactionType: "",
+  })
+  const [open, setOpen] = useState(false)
+  const [editTransaction, setEditTransaction] = useState<any>()
+  const [amountError, setAmountError] = useState("")
+  const [noteError, setNoteError] = useState("")
+  const [required, setRequired] = useState("")
+  const handleOpen = async () => {
+    const response = await axios.get(
+      `http://localhost:8080/get-transaction/${id && id}`
+    )
+
+    setEditTransaction(response.data)
+    setOpen(true)
+  }
+  const handleClose = () => setOpen(false)
 
   const handleAmount = (event: SelectChangeEvent) => {
-    const amount = event.target.value;
+    const amount = event.target.value
     if (amount === "") {
-      setAmountError("Amount is empty");
+      setAmountError("Amount is empty")
     } else {
-      setAmount(event.target.value);
+      type == "edit"
+        ? setEditTransaction({ ...editTransaction, amount: event.target.value })
+        : setAddTransaction({ ...plusTransaction, amount: event.target.value })
     }
-  };
+  }
 
   const handleNote = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
-    const note = event.target.value;
+    const note = event.target.value
     if (note === "") {
-      setNoteError("Note is empty");
+      setNoteError("Note is empty")
     } else {
-      setNote(note);
+      type == "edit"
+        ? setEditTransaction({ ...editTransaction, note: event.target.value })
+        : setAddTransaction({ ...plusTransaction, note: event.target.value })
     }
-  };
+  }
   const handleCategory = (event: SelectChangeEvent) => {
-    setCategory(event.target.value);
-  };
+    type == "edit"
+      ? setEditTransaction({ ...editTransaction, category: event.target.value })
+      : setAddTransaction({ ...plusTransaction, category: event.target.value })
+  }
 
   const addTransaction = async () => {
     try {
       const response = await axios.post(
         "http://localhost:8080/create-transaction",
         {
-          userId:'123',
-          category,
-          amount: Number(amount),
-          note,
-          transactionType,
+          userId: "123",
+          ...plusTransaction,
         }
-      );
-      console.log(response);
+      )
+      setReleod && setReleod(response)
     } catch (error) {
-      console.log(error);
+      throw error
     }
-  };
+  }
+  const editTransactionFunc = async () => {
+    try {
+      const response = await axios.put(
+        `http://localhost:8080/update-transaction/${id}`,
+        {
+          userId: "123",
+          ...editTransaction,
+        }
+      )
+      setReleod && setReleod(response)
+    } catch (error) {
+      throw error
+    }
+  }
 
   const handleAddTransaction = () => {
-    if (amount === "") {
-      setRequired("AAAAA");
-    } else {
-      addTransaction();
-      handleClose();
-    }
-  };
+    type == "edit" ? editTransactionFunc() : addTransaction()
+    handleClose()
+  }
+
   return (
     <div>
-      <button className="ntb" onClick={handleOpen}>
-        <Plus /> Add
-      </button>
+      <div onClick={handleOpen}>
+        {type == "edit" ? (
+          <>
+            <EditLogo />
+          </>
+        ) : (
+          <div className="ntb">
+            <Plus /> Add
+          </div>
+        )}
+      </div>
       <Modal
         open={open}
         onClose={handleClose}
@@ -99,26 +139,40 @@ export const RecordModal = () => {
                 Add Record
               </Typography>
               <RecordToggleButton
-                transactionType={transactionType}
-                setTransactionType={setTransactionType}
+                transactionType={
+                  type == "edit"
+                    ? editTransaction?.transactionType
+                    : plusTransaction?.transactionType
+                }
+                setTransactionType={
+                  type == "edit" ? setEditTransaction : setAddTransaction
+                }
               />
               <input
-                value={amount}
+                value={editTransaction?.amount}
                 placeholder="₮ 000.00"
                 onChange={handleAmount}
-                style={{marginTop:"15px" , width: "348px", height: "56px", borderRadius:"5px" , border:"1px solid rgba(209, 213, 219, 1)", paddingLeft: "15px", }}
+                style={{
+                  marginTop: "15px",
+                  width: "348px",
+                  height: "56px",
+                  borderRadius: "5px",
+                  border: "1px solid rgba(209, 213, 219, 1)",
+                  paddingLeft: "15px",
+                }}
               />
-              <div style={{display:"flex", flexDirection:"row"}}><h3>{amountError}</h3></div>
+              <div style={{ display: "flex", flexDirection: "row" }}>
+                <h3>{amountError}</h3>
+              </div>
               <Typography
                 style={{ display: "flex", gap: "12px", marginBottom: "10px" }}
                 variant="body1"
               >
-                {" "}
-                Category{" "}
+                Category
               </Typography>
               <RecordCategorySelector
                 handleCategory={handleCategory}
-                category={category}
+                category={editTransaction?.category}
               />
               <div
                 style={{
@@ -158,14 +212,12 @@ export const RecordModal = () => {
             <div>
               <Typography variant="body1"> Note </Typography>
               <textarea
-                value={note}
+                value={editTransaction?.note}
                 onChange={handleNote}
                 rows={20}
                 cols={50}
                 placeholder="Write here "
-                style={{paddingLeft: "15px",
-                  paddingTop: "15px"
-                }}
+                style={{ paddingLeft: "15px", paddingTop: "15px" }}
               />
               <div>{noteError}</div>
             </div>
@@ -173,5 +225,5 @@ export const RecordModal = () => {
         </Box>
       </Modal>
     </div>
-  );
-};
+  )
+}

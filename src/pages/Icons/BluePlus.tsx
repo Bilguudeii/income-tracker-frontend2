@@ -12,5 +12,5 @@ export const BluePlus = () => {
         fill="#0166FF"
       />
     </svg>
-  );
-};
+  )
+}
