@@ -1,4 +1,4 @@
-import { Home, EditLogo, DeleteLogo } from "../Icons"
+import { Home , DeleteLogo } from "../Icons"
 import axios from "axios"
 import { Transcation } from "../interfaces"
 import { RecordModal } from "./RecordModal"
@@ -44,8 +44,8 @@ export const RecordListItem = ({
           </div>
         </div>
         <div className="transactionNoteTitlet">
-          {transaction?.transactionTitle}
-          {transaction?.note}
+          {transaction.transactionTitle}
+          {transaction.note}
         </div>
       </div>
       <div className="flex-center">

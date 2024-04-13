@@ -31,7 +31,7 @@ function DashBoardOne() {
           Cash
         </p>
         <p style={{ margin: 0, fontSize: "24px", color: "white" }}>
-          10,000,000$
+          10,000,000₮
         </p>
       </div>
     </div>

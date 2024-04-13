@@ -5,19 +5,21 @@ import DashBoardTwo from "./component/DashBoardTwo";
 import { List } from "./component//list";
 import { useRouter } from "next/router";
 import { BarChart } from "./component/chart";
-import { Chaart } from "./component/chaart"
+import { Chaart } from "./component/chaart";
 
 const Home = () => {
-  const router = useRouter()
+  const router = useRouter();
   return (
     <>
-      <div className="MMAIN">
+      <div className="dashMMAIN">
         <div className="MAIIIN">
           <div className="navbar">
             <div className="topmain">
               <GeldIconLogo />
               <h2 className="dash">Dashboard</h2>
-              <div className="records" onClick={() => router.push('/records')}>Records</div>
+              <div className="records" onClick={() => router.push("/records")}>
+                Records
+              </div>
             </div>
             <div className="top2main">
               <div>
@@ -28,39 +30,40 @@ const Home = () => {
               <img className="prof" src="prof.jpeg" />
             </div>
           </div>
-
-          <div className="Stack">
-            <div className="Stackk">
-              <DashBoardOne />
-              <DashBoardTwo />
-              <DashBoardTwo />
+          <div>
+            <div className="dashContainer">
+              <div className="Stack">
+                <div className="Stackk">
+                  <DashBoardOne />
+                  <DashBoardTwo />
+                  <DashBoardTwo />
+                </div>
+              </div>
+              <div className="middlee">
+                <div>
+                  <div className="middletwo">
+                    <h2>Income - Expense</h2>
+                  </div>
+                  <div className="middletwoo">
+                    <BarChart />
+                  </div>
+                </div>
+                <div>
+                  <div className="middletwo"></div>
+                  <div className="middletwoo">
+                    <Chaart />
+                  </div>
+                </div>
+              </div>
+              <div className="bottom">
+                <List />
+              </div>
             </div>
-          </div>
-          <div className="middlee">
-            <div>
-              <div className="middletwo">
-                <h2>Income - Expense</h2>
-              </div>
-              <div className="middletwoo">
-              <BarChart />
-              </div>
-            </div>
-            <div>
-              <div className="middletwo">
-              </div>
-              <div className="middletwoo">
-                <Chaart/>
-              </div>
-            </div>
-          </div>
-          <div className="bottom">
-            <List />
           </div>
         </div>
       </div>
     </>
   );
 };
-
 
 export default Home;

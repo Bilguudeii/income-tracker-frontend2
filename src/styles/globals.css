@@ -157,8 +157,7 @@
   display: flex;
   justify-content: space-between;
   padding: 0 6vw;
-  background-color: white;
-  width: 100vw;
+  background-color: white
 }
 
 .dash {
@@ -203,7 +202,7 @@
   flex-direction: row;
   justify-content: space-between;
   background-color: #f3f4f6;
-  padding: 3vw 6vw;
+  padding: 4.5vw 6vw;
   gap: 5vw;
 }
 
@@ -313,18 +312,19 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 1440px;
 }
 
 .lastrecords {
   padding: 16px 24px;
-  border-bottom: 1px;
+  border-bottom: 1px solid rgba(55, 65, 81, 1);
   background-color: white;
-  width: 1440px;
+  width: 100%;
   border-radius: 10px 10px 0px 0px;
 }
 .lasst {
-  margin-left: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   overflow: scroll;
   height: 406px;
   border-radius: 10px;
@@ -386,6 +386,12 @@
   gap: 8px;
   margin-top: 5px;
 }
+.ttMUIX {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 5px;
+}
 .Type {
   margin: 20px 20px;
 }
@@ -417,7 +423,16 @@
   border-radius: 12px;
   background-color: white;
 }
-
+.dashContainerList{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 12px 24px;
+  border-radius: 0 0  12px 12px;
+  gap: 15px;
+  width: 100%;
+  background-color: white;
+}
 .transactionNoteTitlet {
   display: flex;
   flex-direction: column;
@@ -464,4 +479,26 @@
 }
 .ntbToggle {
   width: 175px;
+}
+.dashMMAIN{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #f3f4f6;
+  gap: 5vw;
+}
+.dashNTB{
+  display: flex;
+  align-items: center;
+}
+.dashttNtbContainer{
+  display: flex;
+  flex-direction: row;
+}
+.dashContainer{
+  padding:2.5vw 18vw ;
+  background-color: #f3f4f6;
+}
+.dashMainContainer{
+
 }

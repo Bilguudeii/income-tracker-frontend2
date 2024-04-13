@@ -4,8 +4,9 @@ import { useRouter } from "next/router"
 import Category from "../component/category"
 import { RecordList } from "../component/RecordList"
 import { RecordModal } from "../component/RecordModal"
-import axios, { AxiosRequestConfig } from "axios"
+// import axios, { AxiosRequestConfig } from "axios"
 import { useState } from "react"
+import RadioButtonsGroup from "../component/RadioButton"
 
 const Records = () => {
   const router = useRouter()
@@ -39,16 +40,7 @@ const Records = () => {
               <h3 className="Title-Small">Types</h3>
               <div className="Type">
                 <div className="ttMUI">
-                  <input className="ttCheckBox" type="checkbox" />
-                  <h3 className="ttName">All</h3>
-                </div>
-                <div className="ttMUI">
-                  <input className="ttCheckBox" type="checkbox" />
-                  <h3 className="ttName">Income</h3>
-                </div>
-                <div className="ttMUI">
-                  <input className="ttCheckBox" type="checkbox" />
-                  <h3 className="ttName">Expense</h3>
+                  <RadioButtonsGroup/>
                 </div>
               </div>
             </div>

@@ -14,16 +14,16 @@ type Transcation = {
 
 export const ListItem = ({ transaction }: { transaction: Transcation }) => {
   return (
-    <div className="containerList">
+    <div className="dashContainerList">
       <div className="bluecircle">
         <Home />
       </div>
-      <div className="transactionNoteTitle">
+      <div className="transactionNoteTitle dashNTB">
         {transaction.transactionTitle}
 
         {transaction.note}
       </div>
-      <div className="ttNtbContainer">
+      <div className="dashttNtbContainer dashNTB">
         <button className="ttNtb">
           {" "}
           <EditLogo />{" "}
