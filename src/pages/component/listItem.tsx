@@ -21,7 +21,7 @@ export const ListItem = ({ transaction }: { transaction: Transcation }) => {
       <div className="transactionNoteTitle dashNTB">
         {transaction.transactionTitle}
 
-        {transaction.note}
+        {transaction.category}
       </div>
       <div className="dashttNtbContainer dashNTB">
         <button className="ttNtb">

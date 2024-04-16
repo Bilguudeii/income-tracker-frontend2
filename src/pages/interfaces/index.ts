@@ -1,7 +1,7 @@
 export type Transcation = {
+  createAt: string | number | Date
   amount: number
   category: string
-  createAt: Date | string
   note: string
   transactionTitle: string
   transactionType: string

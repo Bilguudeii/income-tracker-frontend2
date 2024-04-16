@@ -30,7 +30,7 @@ const Home = () => {
               <img className="prof" src="prof.jpeg" />
             </div>
           </div>
-          <div>
+          <div className="dashMainContainer">
             <div className="dashContainer">
               <div className="Stack">
                 <div className="Stackk">

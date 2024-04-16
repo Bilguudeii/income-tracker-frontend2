@@ -428,7 +428,7 @@
   flex-direction: row;
   justify-content: space-between;
   padding: 12px 24px;
-  border-radius: 0 0  12px 12px;
+  border-radius: 12px;
   gap: 15px;
   width: 100%;
   background-color: white;
