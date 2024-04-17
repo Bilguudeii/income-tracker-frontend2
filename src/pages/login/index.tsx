@@ -15,7 +15,7 @@ const Login = () => {
     })
     if (res.status === 200) {
       localStorage.setItem("user", "true")
-      localStorage.setItem("userId", JSON.stringify(res.data._id))
+      localStorage.setItem("userId", res.data._id)
     }
     router.push("/")
   }

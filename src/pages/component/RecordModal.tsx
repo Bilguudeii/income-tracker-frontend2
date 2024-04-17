@@ -1,13 +1,14 @@
 /* eslint-disable max-lines */
-import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
-import Modal from "@mui/material/Modal";
-import { SelectChangeEvent } from "@mui/material";
-import { RecordCategorySelector } from "./RecordCategorySelector";
-import { useState } from "react";
-import { RecordToggleButton } from "./RecordToggleButton";
-import { EditLogo, Plus } from "../Icons";
-import axios from "axios";
+import Box from "@mui/material/Box"
+import Typography from "@mui/material/Typography"
+import Modal from "@mui/material/Modal"
+import { SelectChangeEvent } from "@mui/material"
+import { RecordCategorySelector } from "./RecordCategorySelector"
+import { useEffect, useState } from "react"
+import { RecordToggleButton } from "./RecordToggleButton"
+import { EditLogo, Plus } from "../Icons"
+import axios from "axios"
+import { Transcation } from "../interfaces"
 
 const style = {
   position: "absolute",
@@ -20,102 +21,106 @@ const style = {
   boxShadow: 24,
   borderRadius: 8,
   p: 4,
-};
+}
 
 export const RecordModal = ({
   type,
   id,
   setReleod,
 }: {
-  type: string;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  id: any;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  setReleod?: any;
+  type: string
+  id: string
+  setReleod?: any
 }) => {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [plusTransaction, setAddTransaction] = useState<any>({
+    amount: 0,
     category: "",
-    amount: "",
     note: "",
     transactionType: "",
-  });
-  const [open, setOpen] = useState(false);
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const [editTransaction, setEditTransaction] = useState<any>();
-  const [amountError, setAmountError] = useState("");
-  const [noteError, setNoteError] = useState("");
-  const [required] = useState("");
+  })
+  const [userId, setUserId] = useState<string>("")
+
+  const [open, setOpen] = useState(false)
+  useEffect(() => {
+    if (typeof window !== "undefined" && window.localStorage) {
+      let id: any = window.localStorage.getItem("userId")
+      id && setUserId(id)
+    }
+  }, [])
+  const [editTransaction, setEditTransaction] = useState<any>()
+  const [amountError, setAmountError] = useState("")
+  const [noteError, setNoteError] = useState("")
+  const [required] = useState("")
   const handleOpen = async () => {
     const response = await axios.get(
       `http://localhost:8080/get-transaction/${id && id}`
-    );
+    )
 
-    setEditTransaction(response.data);
-    setOpen(true);
-  };
-  const handleClose = () => setOpen(false);
+    setEditTransaction(response.data)
+    setOpen(true)
+  }
+  const handleClose = () => setOpen(false)
 
   const handleAmount = (event: SelectChangeEvent) => {
-    const amount = event.target.value;
+    const amount = event.target.value
     if (amount === "") {
-      setAmountError("Amount is empty");
+      setAmountError("Amount is empty")
     } else {
       type == "edit"
-        ? setEditTransaction({ ...editTransaction, amount: event.target.value, })
-        : setAddTransaction({ ...plusTransaction, amount: event.target.value });
+        ? setEditTransaction({ ...editTransaction, amount: event.target.value })
+        : setAddTransaction({ ...plusTransaction, amount: event.target.value })
     }
-  };
+  }
 
   const handleNote = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
-    const note = event.target.value;
+    const note = event.target.value
     if (note === "") {
-      setNoteError("Note is empty");
+      setNoteError("Note is empty")
     } else {
       type == "edit"
         ? setEditTransaction({ ...editTransaction, note: event.target.value })
-        : setAddTransaction({ ...plusTransaction, note: event.target.value });
+        : setAddTransaction({ ...plusTransaction, note: event.target.value })
     }
-  };
+  }
   const handleCategory = (event: SelectChangeEvent) => {
     type == "edit"
       ? setEditTransaction({ ...editTransaction, category: event.target.value })
-      : setAddTransaction({ ...plusTransaction, category: event.target.value });
-  };
+      : setAddTransaction({ ...plusTransaction, category: event.target.value })
+  }
 
   const addTransaction = async () => {
     try {
       const response = await axios.post(
         "http://localhost:8080/create-transaction",
         {
-          userId: "123",
+          userId: userId && userId,
           ...plusTransaction,
         }
-      );
-      setReleod && setReleod(response);
+      )
+      setReleod && setReleod(response)
     } catch (error) {
-      throw error;
+      throw error
     }
-  };
+  }
   const editTransactionFunc = async () => {
     try {
       const response = await axios.put(
         `http://localhost:8080/update-transaction/${id}`,
         {
-          userId: "123",
+          userId: userId && userId,
           ...editTransaction,
         }
-      );
-      setReleod && setReleod(response);
+      )
+      setReleod && setReleod(response)
     } catch (error) {
-      throw error;
+      throw error
     }
-  };
+  }
 
   const handleAddTransaction = () => {
-    type == "edit" ? editTransactionFunc() : addTransaction();
-    handleClose();
-  };
+    type == "edit" ? editTransactionFunc() : addTransaction()
+    handleClose()
+  }
 
   return (
     <div>
@@ -229,5 +234,5 @@ export const RecordModal = ({
         </Box>
       </Modal>
     </div>
-  );
-};
+  )
+}

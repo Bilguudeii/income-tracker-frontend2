@@ -14,7 +14,6 @@ const Records = () => {
   return (
     <div>
       <div className="MAIIIN">
-        {/* --------- NAVBAR ---------- */}
         <div className="navbar">
           <div className="topmain">
             <GeldIconLogo />
@@ -40,7 +39,7 @@ const Records = () => {
               <h3 className="Title-Small">Types</h3>
               <div className="Type">
                 <div className="ttMUI">
-                  <RadioButtonsGroup/>
+                  <RadioButtonsGroup />
                 </div>
               </div>
             </div>

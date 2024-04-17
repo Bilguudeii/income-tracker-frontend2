@@ -1,14 +1,16 @@
-import { GeldIconLogo } from "./Icons/GeldLogo";
-import { Plus } from "./Icons/Plus";
-import DashBoardOne from "./component/DashBoardOne";
-import DashBoardTwo from "./component/DashBoardTwo";
-import { List } from "./component//list";
-import { useRouter } from "next/router";
-import { BarChart } from "./component/chart";
-import { Chaart } from "./component/chaart";
+import { GeldIconLogo } from "./Icons/GeldLogo"
+import { Plus } from "./Icons/Plus"
+import DashBoardOne from "./component/DashBoardOne"
+import DashBoardTwo from "./component/DashBoardTwo"
+import { List } from "./component//list"
+import { useRouter } from "next/router"
+import { BarChart } from "./component/chart"
+import { Chaart } from "./component/chaart"
+import { useEffect } from "react"
 
 const Home = () => {
-  const router = useRouter();
+  const router = useRouter()
+
   return (
     <>
       <div className="dashMMAIN">
@@ -63,7 +65,7 @@ const Home = () => {
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home
