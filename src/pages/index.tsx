@@ -6,64 +6,64 @@ import { List } from "./component//list"
 import { useRouter } from "next/router"
 import { BarChart } from "./component/chart"
 import { Chaart } from "./component/chaart"
-import { useEffect } from "react"
+import { Box } from "@mui/material"
 
 const Home = () => {
   const router = useRouter()
 
   return (
     <>
-      <div className="dashMMAIN">
-        <div className="MAIIIN">
-          <div className="navbar">
-            <div className="topmain">
+      <Box className="dashMMAIN">
+        <Box className="MAIIIN">
+          <Box className="navbar">
+            <Box className="topmain">
               <GeldIconLogo />
               <h2 className="dash">Dashboard</h2>
-              <div className="records" onClick={() => router.push("/records")}>
+              <Box className="records" onClick={() => router.push("/records")}>
                 Records
-              </div>
-            </div>
-            <div className="top2main">
-              <div>
+              </Box>
+            </Box>
+            <Box className="top2main">
+              <Box>
                 <button className="buttonRec">
                   <Plus /> <h3 className="buttonRecc">Record</h3>
                 </button>
-              </div>
+              </Box>
               <img className="prof" src="prof.jpeg" />
-            </div>
-          </div>
-          <div className="dashMainContainer">
-            <div className="dashContainer">
-              <div className="Stack">
-                <div className="Stackk">
+            </Box>
+          </Box>
+          <Box className="dashMainContainer">
+            <Box className="dashContainer">
+              <Box className="Stack">
+                <Box className="Stackk">
                   <DashBoardOne />
                   <DashBoardTwo />
                   <DashBoardTwo />
-                </div>
-              </div>
-              <div className="middlee">
-                <div>
-                  <div className="middletwo">
+                </Box>
+              </Box>
+              <Box className="middlee">
+                <Box>
+                  <Box className="middletwo">
                     <h2>Income - Expense</h2>
-                  </div>
-                  <div className="middletwoo">
+                  </Box>
+                  <Box className="middletwoo">
                     <BarChart />
-                  </div>
-                </div>
-                <div>
-                  <div className="middletwo"></div>
-                  <div className="middletwoo">
+                  </Box>
+                </Box>
+                <Box>
+                  <Box className="middletwo"></Box>
+                  <Box className="middletwoo">
                     <Chaart />
-                  </div>
-                </div>
-              </div>
-              <div className="bottom">
+                  </Box>
+                </Box>
+              </Box>
+              <Box className="bottom">
                 <List />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+              </Box>
+            </Box>
+          </Box>
+        </Box>
+      </Box>
     </>
   )
 }

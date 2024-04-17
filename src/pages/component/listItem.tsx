@@ -1,29 +1,19 @@
+import { Box } from "@mui/material"
 import { Home, EditLogo, DeleteLogo } from "../Icons"
-
-type Transcation = {
-  amount: number
-  category: string
-  createAt: Date | string
-  note: string
-  transactionTitle: string
-  transactionType: string
-  userId: string
-  __v: number
-  _id: string
-}
+import { Transcation } from "../interfaces"
 
 export const ListItem = ({ transaction }: { transaction: Transcation }) => {
   return (
-    <div className="dashContainerList">
-      <div className="bluecircle">
+    <Box className="dashContainerList">
+      <Box className="bluecircle">
         <Home />
-      </div>
-      <div className="transactionNoteTitle dashNTB">
+      </Box>
+      <Box className="transactionNoteTitle dashNTB">
         {transaction.transactionTitle}
 
         {transaction.category}
-      </div>
-      <div className="dashttNtbContainer dashNTB">
+      </Box>
+      <Box className="dashttNtbContainer dashNTB">
         <button className="ttNtb">
           {" "}
           <EditLogo />{" "}
@@ -32,8 +22,8 @@ export const ListItem = ({ transaction }: { transaction: Transcation }) => {
           {" "}
           <DeleteLogo />{" "}
         </button>
-      </div>
-      <div>{transaction.amount}</div>
-    </div>
+      </Box>
+      <Box>{transaction.amount}</Box>
+    </Box>
   )
 }

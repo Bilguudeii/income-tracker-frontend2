@@ -1,3 +1,4 @@
+import { Box } from "@mui/material"
 import { Checked } from "../Icons"
 interface Category {
   label: string
@@ -19,7 +20,7 @@ const Category = () => {
     label: Category,
   }))
   return (
-    <div
+    <Box
       style={{
         display: "flex",
         flexDirection: "column",
@@ -28,7 +29,7 @@ const Category = () => {
       }}
     >
       {mappedcategories.map((Category) => (
-        <div
+        <Box
           key={Category.label}
           style={{
             display: "flex",
@@ -36,9 +37,9 @@ const Category = () => {
           }}
         >
           <Checked /> {Category.label}
-        </div>
+        </Box>
       ))}
-    </div>
+    </Box>
   )
 }
 export default Category

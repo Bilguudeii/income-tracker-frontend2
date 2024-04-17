@@ -18,6 +18,7 @@
   flex-direction: column;
   align-items: center;
   width: 50%;
+  gap: 10px;
   margin-top: 250px;
 }
 
@@ -32,9 +33,8 @@
 .login-form input {
   width: 300px;
   height: 40px;
-  margin: 5px 0;
   padding: 0 10px;
-  border: 1px solid #ccc;
+  border: 1px solid rgba(209, 213, 219, 1);
   border-radius: 4px;
   font-size: 16px;
 }
@@ -78,11 +78,8 @@
 }
 
 .login-form input {
-  width: 300px;
-  height: 40px;
-  margin: 5px 0;
   padding: 0 10px;
-  border: 1px solid #ccc;
+  border: 1px solid rgba(209, 213, 219, 1);
   border-radius: 4px;
   font-size: 16px;
 }
@@ -138,6 +135,8 @@
 .aaaaD {
   display: flex;
   flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
 }
 
 .prof {
@@ -157,7 +156,7 @@
   display: flex;
   justify-content: space-between;
   padding: 0 6vw;
-  background-color: white
+  background-color: white;
 }
 
 .dash {
@@ -423,7 +422,7 @@
   border-radius: 12px;
   background-color: white;
 }
-.dashContainerList{
+.dashContainerList {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -480,25 +479,24 @@
 .ntbToggle {
   width: 175px;
 }
-.dashMMAIN{
+.dashMMAIN {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   background-color: #f3f4f6;
   gap: 5vw;
 }
-.dashNTB{
+.dashNTB {
   display: flex;
   align-items: center;
 }
-.dashttNtbContainer{
+.dashttNtbContainer {
   display: flex;
   flex-direction: row;
 }
-.dashContainer{
-  padding:2.5vw 18vw ;
+.dashContainer {
+  padding: 2.5vw 18vw;
   background-color: #f3f4f6;
 }
-.dashMainContainer{
-
+.dashMainContainer {
 }

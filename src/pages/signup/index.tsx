@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import axios from "axios"
 import { GeldIcon } from "../Icons/Geld"
 import { useRouter } from "next/router"
+import { Box, Button, TextField } from "@mui/material"
 
 const SignUpForm = () => {
   const [username, setUsername] = useState("")
@@ -35,47 +36,49 @@ const SignUpForm = () => {
   }
 
   return (
-    <div className="Main">
-      <div className="login-form">
+    <Box className="Main">
+      <Box className="login-form">
         <GeldIcon />
         <h3 className="ngdehug">Create Geld account</h3>
-        <p className="hoyrdhUg">Sign up below to create your Wallet account</p>
-        <div onSubmit={handleSubmit} className="aaaaD">
-          <input
+        <Box className="hoyrdhUg">
+          Sign up below to create your Wallet account
+        </Box>
+        <Box onSubmit={handleSubmit} className="aaaaD">
+          <TextField
             placeholder="Username"
             type="text"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
           />
-          <input
+          <TextField
             placeholder="Email"
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
-          <input
+          <TextField
             placeholder="Password"
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          <input
+          <TextField
             placeholder="Re-enter Password"
             type="password"
             value={rePassword}
             onChange={(e) => setRePassword(e.target.value)}
           />
-          <button onClick={createUser}>Sign Up</button>
-        </div>
-        <p className="text-center text-gray-500">
+          <Button onClick={createUser}>Sign Up</Button>
+        </Box>
+        <Box className="text-center text-gray-500">
           Already have an account?{" "}
           <a href="/login" className="text-blue-500 hover:text-blue-700">
             Log in
           </a>
-        </p>
-      </div>
-      <div className="nuurniital"></div>
-    </div>
+        </Box>
+      </Box>
+      <Box className="nuurniital"></Box>
+    </Box>
   )
 }
 

@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import { GeldIcon } from "../Icons/Geld"
 import axios from "axios"
 import { useRouter } from "next/router"
+import { Box, Button, TextField } from "@mui/material"
 
 const Login = () => {
   const router = useRouter()
@@ -22,24 +23,24 @@ const Login = () => {
 
   return (
     <>
-      <div className="Main">
-        <div className="login-form">
+      <Box className="Main">
+        <Box className="login-form">
           <GeldIcon />
           <h3 className="ngdehug">Welcome Back</h3>
           <p className="hoyrdhUg">Welcome back, Please enter your details</p>
-          <input
-            type="email"
+          <TextField
             placeholder="Email"
+            type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
-          <input
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
+          <TextField
+            placeholder="Email"
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
-          <button
+          <Button
             type="submit"
             onClick={() => {
               loginUser(email, password).catch((error) => {
@@ -48,14 +49,14 @@ const Login = () => {
             }}
           >
             Log in
-          </button>
+          </Button>
 
-          <p>
+          <Box>
             Dont have an account? <a href="/signup">Sign up</a>
-          </p>
-        </div>
-        <div className="nuurniital"></div>
-      </div>
+          </Box>
+        </Box>
+        <Box className="nuurniital"></Box>
+      </Box>
     </>
   )
 }

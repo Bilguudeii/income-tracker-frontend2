@@ -1,6 +1,7 @@
 import axios from "axios"
 import { RecordListItem } from "./recordListItem"
 import { useEffect, useState } from "react"
+import { Box } from "@mui/material"
 
 export const RecordList = ({ setReleod, releod }: any) => {
   const [transactions, setTransactions] = useState([])
@@ -32,7 +33,7 @@ export const RecordList = ({ setReleod, releod }: any) => {
   }, [userId, releod])
 
   return (
-    <div className="ttlasst">
+    <Box className="ttlasst">
       {transactions?.map((transaction, index) => (
         <RecordListItem
           key={index}
@@ -40,6 +41,6 @@ export const RecordList = ({ setReleod, releod }: any) => {
           setReleod={setReleod}
         />
       ))}
-    </div>
+    </Box>
   )
 }

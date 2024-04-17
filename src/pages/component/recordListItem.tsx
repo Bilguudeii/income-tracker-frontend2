@@ -2,6 +2,7 @@ import { Home, DeleteLogo } from "../Icons"
 import axios from "axios"
 import { Transcation } from "../interfaces"
 import { RecordModal } from "./RecordModal"
+import { Box } from "@mui/material"
 
 export const RecordListItem = ({
   transaction,
@@ -41,25 +42,25 @@ export const RecordListItem = ({
 
   const formattedDate = `${year}/${month}/${day}`
   return (
-    <div className="containerListt">
-      <div className="flex-center">
-        <div className="ttBlueCircleContainer">
-          <div className="ttbluecircle">
+    <Box className="containerListt">
+      <Box className="flex-center">
+        <Box className="ttBlueCircleContainer">
+          <Box className="ttbluecircle">
             <Home />
-          </div>
-        </div>
-        <div className="transactionNoteTitlet">
-          <div>{formattedDate}</div>
-          <div style={{ display: "flex" }}>
+          </Box>
+        </Box>
+        <Box className="transactionNoteTitlet">
+          <Box>{formattedDate}</Box>
+          <Box style={{ display: "flex" }}>
             <h4 style={{ padding: "0 1.5vw 0 0vw" }}>
               {transaction.category}{" "}
             </h4>
             <h4>{transaction.note} </h4>
-          </div>
-        </div>
-      </div>
-      <div className="flex-center">
-        <div>
+          </Box>
+        </Box>
+      </Box>
+      <Box className="flex-center">
+        <Box>
           <button className="ttNtb">
             <RecordModal
               type="edit"
@@ -70,15 +71,15 @@ export const RecordListItem = ({
           <button onClick={deleteTransaction} className="ttNtb">
             <DeleteLogo />
           </button>
-        </div>
-        <div
+        </Box>
+        <Box
           style={{ color: InExColors[transaction.transactionType] }}
           className="ttAmount"
         >
           {InExDiff[transaction.transactionType]}
           {transaction.amount}₮
-        </div>
-      </div>
-    </div>
+        </Box>
+      </Box>
+    </Box>
   )
 }

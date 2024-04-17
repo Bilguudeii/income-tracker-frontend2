@@ -1,9 +1,10 @@
-import * as React from "react";
-import CardPic from "../../../public/Large.png";
+import { Box } from "@mui/material"
+import * as React from "react"
+import CardPic from "../../../public/Large.png"
 
 function DashBoardOne() {
   return (
-    <div
+    <Box
       style={{
         backgroundImage: `url(${CardPic.src})`,
         width: "384.12px",
@@ -11,7 +12,7 @@ function DashBoardOne() {
         position: "relative",
       }}
     >
-      <div
+      <Box
         style={{
           display: "flex",
           flexDirection: "column",
@@ -33,9 +34,9 @@ function DashBoardOne() {
         <p style={{ margin: 0, fontSize: "24px", color: "white" }}>
           10,000,000₮
         </p>
-      </div>
-    </div>
-  );
+      </Box>
+    </Box>
+  )
 }
 
-export default DashBoardOne;
+export default DashBoardOne

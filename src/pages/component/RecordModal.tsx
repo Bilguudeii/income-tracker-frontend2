@@ -123,18 +123,18 @@ export const RecordModal = ({
   }
 
   return (
-    <div>
-      <div onClick={handleOpen}>
+    <Box>
+      <Box onClick={handleOpen}>
         {type == "edit" ? (
           <>
             <EditLogo />
           </>
         ) : (
-          <div className="ntb">
+          <Box className="ntb">
             <Plus /> Add
-          </div>
+          </Box>
         )}
-      </div>
+      </Box>
       <Modal
         open={open}
         onClose={handleClose}
@@ -142,8 +142,8 @@ export const RecordModal = ({
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-          <div style={{ display: "flex", flexDirection: "row" }}>
-            <div>
+          <Box style={{ display: "flex", flexDirection: "row" }}>
+            <Box>
               <Typography id="modal-modal-title" variant="h6" component="h2">
                 Add Record
               </Typography>
@@ -170,9 +170,9 @@ export const RecordModal = ({
                   paddingLeft: "15px",
                 }}
               />
-              <div style={{ display: "flex", flexDirection: "row" }}>
+              <Box style={{ display: "flex", flexDirection: "row" }}>
                 <h3>{amountError}</h3>
-              </div>
+              </Box>
               <Typography
                 style={{ display: "flex", gap: "12px", marginBottom: "10px" }}
                 variant="body1"
@@ -183,7 +183,7 @@ export const RecordModal = ({
                 handleCategory={handleCategory}
                 category={editTransaction?.category}
               />
-              <div
+              <Box
                 style={{
                   display: "flex",
                   gap: "12px",
@@ -202,7 +202,7 @@ export const RecordModal = ({
                   }}
                   type="date"
                 />
-              </div>
+              </Box>
               <button
                 onClick={handleAddTransaction}
                 style={{
@@ -216,9 +216,9 @@ export const RecordModal = ({
               >
                 Add Record
               </button>
-              <div>{required}</div>
-            </div>
-            <div>
+              <Box>{required}</Box>
+            </Box>
+            <Box>
               <Typography variant="body1"> Note </Typography>
               <textarea
                 value={editTransaction?.note}
@@ -228,11 +228,11 @@ export const RecordModal = ({
                 placeholder="Write here "
                 style={{ paddingLeft: "15px", paddingTop: "15px" }}
               />
-              <div>{noteError}</div>
-            </div>
-          </div>
+              <Box>{noteError}</Box>
+            </Box>
+          </Box>
         </Box>
       </Modal>
-    </div>
+    </Box>
   )
 }

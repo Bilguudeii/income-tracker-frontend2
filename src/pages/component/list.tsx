@@ -1,6 +1,7 @@
 import axios from "axios"
 import { ListItem } from "./listItem"
 import { useEffect, useState } from "react"
+import { Box } from "@mui/material"
 
 export const List = () => {
   const [transactions, setTransactions] = useState([])
@@ -13,14 +14,13 @@ export const List = () => {
     fetchData()
   }, [])
   return (
-    <div style={{}}>
-      {" "}
-      <div className="lasst">
-        <div className="lastrecords">Last records</div>
+    <Box style={{}}>
+      <Box className="lasst">
+        <Box className="lastrecords">Last records</Box>
         {transactions.map((transaction, index) => (
           <ListItem key={index} transaction={transaction} />
         ))}
-      </div>
-    </div>
+      </Box>
+    </Box>
   )
 }

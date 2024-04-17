@@ -4,54 +4,54 @@ import { useRouter } from "next/router"
 import Category from "../component/category"
 import { RecordList } from "../component/RecordList"
 import { RecordModal } from "../component/RecordModal"
-// import axios, { AxiosRequestConfig } from "axios"
 import { useState } from "react"
 import RadioButtonsGroup from "../component/RadioButton"
+import { Box } from "@mui/material"
 
 const Records = () => {
   const router = useRouter()
   const [releod, setReleod] = useState("")
   return (
-    <div>
-      <div className="MAIIIN">
-        <div className="navbar">
-          <div className="topmain">
+    <Box>
+      <Box className="MAIIIN">
+        <Box className="navbar">
+          <Box className="topmain">
             <GeldIconLogo />
             <h2 className="dash" onClick={() => router.push("/")}>
               Dashboard
             </h2>
-            <div className="records">Records</div>
-          </div>
-          <div className="top2main">
-            <div className="ntbContainer">
+            <Box className="records">Records</Box>
+          </Box>
+          <Box className="top2main">
+            <Box className="ntbContainer">
               <button className="buttonRec">
                 <Plus /> <h3 className="buttonRecc">Record</h3>
               </button>
-            </div>
+            </Box>
             <img className="prof" src="prof.jpeg" />
-          </div>
-        </div>
-        <div className=" MMAIN">
-          <div className="ttRecords">
+          </Box>
+        </Box>
+        <Box className=" MMAIN">
+          <Box className="ttRecords">
             <h2 className="Title">Records</h2>
             <RecordModal type="add" id="" setReleod={setReleod} />
-            <div>
+            <Box>
               <h3 className="Title-Small">Types</h3>
-              <div className="Type">
-                <div className="ttMUI">
+              <Box className="Type">
+                <Box className="ttMUI">
                   <RadioButtonsGroup />
-                </div>
-              </div>
-            </div>
-            <div>
+                </Box>
+              </Box>
+            </Box>
+            <Box>
               <h2 className="Title-Small">Category</h2>
               <Category />
-            </div>
-          </div>
+            </Box>
+          </Box>
           <RecordList setReleod={setReleod} releod={releod} />
-        </div>
-      </div>
-    </div>
+        </Box>
+      </Box>
+    </Box>
   )
 }
 

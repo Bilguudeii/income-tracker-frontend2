@@ -1,13 +1,19 @@
-import * as React from "react";
-import Box from "@mui/material/Box";
-import InputLabel from "@mui/material/InputLabel";
-import MenuItem from "@mui/material/MenuItem";
-import FormControl from "@mui/material/FormControl";
-import { Select } from "@mui/material";
+import * as React from "react"
+import Box from "@mui/material/Box"
+import InputLabel from "@mui/material/InputLabel"
+import MenuItem from "@mui/material/MenuItem"
+import FormControl from "@mui/material/FormControl"
+import { Select } from "@mui/material"
 
-export const RecordCategorySelector = ({ handleCategory, category }) => {
+export const RecordCategorySelector = ({
+  handleCategory,
+  category,
+}: {
+  handleCategory: any
+  category: string
+}) => {
   return (
-    <Box sx={{ width: "348px" , height: "66px" }}>
+    <Box sx={{ width: "348px", height: "66px" }}>
       <FormControl fullWidth>
         <InputLabel id="demo-simple-select-label">Category</InputLabel>
         <Select
@@ -28,5 +34,5 @@ export const RecordCategorySelector = ({ handleCategory, category }) => {
         </Select>
       </FormControl>
     </Box>
-  );
-};
+  )
+}
