@@ -15,12 +15,10 @@ export const ListItem = ({ transaction }: { transaction: Transcation }) => {
       </Box>
       <Box className="dashttNtbContainer dashNTB">
         <button className="ttNtb">
-          {" "}
-          <EditLogo />{" "}
+          <EditLogo />
         </button>
         <button className="ttNtb">
-          {" "}
-          <DeleteLogo />{" "}
+          <DeleteLogo />
         </button>
       </Box>
       <Box>{transaction.amount}</Box>

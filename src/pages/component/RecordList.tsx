@@ -23,7 +23,13 @@ export const RecordList = ({ setReleod, releod }: any) => {
           const response = await axios.get(
             `http://localhost:8080/get-transaction-userId/${userId}`
           )
-          setTransactions(response.data)
+          console.log(response)
+          const sortedTransactions = response.data.sort((a: any, b: any) => {
+            const dateA: any = new Date(a.createAt)
+            const dateB: any = new Date(b.createAt)
+            return dateB - dateA
+          })
+          setTransactions(sortedTransactions)
         } catch (error) {
           console.error("Error fetching data:", error)
         }

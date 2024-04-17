@@ -38,6 +38,7 @@ export const RecordModal = ({
     note: "",
     transactionType: "",
   })
+  const [date, setDate] = useState<any>()
   const [userId, setUserId] = useState<string>("")
 
   const [open, setOpen] = useState(false)
@@ -93,6 +94,7 @@ export const RecordModal = ({
       const response = await axios.post(
         "http://localhost:8080/create-transaction",
         {
+          createAt: new Date(date),
           userId: userId && userId,
           ...plusTransaction,
         }
@@ -201,6 +203,8 @@ export const RecordModal = ({
                     paddingRight: "10px",
                   }}
                   type="date"
+                  value={date}
+                  onChange={(e) => setDate(e.target.value)}
                 />
               </Box>
               <button
