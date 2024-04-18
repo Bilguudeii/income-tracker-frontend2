@@ -1,3 +1,6 @@
+/* eslint-disable prefer-const */
+/* eslint-disable @typescript-eslint/no-unnecessary-condition */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable max-lines */
 import Box from "@mui/material/Box"
 import Typography from "@mui/material/Typography"
@@ -8,7 +11,7 @@ import { useEffect, useState } from "react"
 import { RecordToggleButton } from "./RecordToggleButton"
 import { EditLogo, Plus } from "../Icons"
 import axios from "axios"
-import { Transcation } from "../interfaces"
+// import { Transcation } from "../interfaces"
 
 const style = {
   position: "absolute",
@@ -129,7 +132,7 @@ export const RecordModal = ({
       <Box onClick={handleOpen}>
         {type == "edit" ? (
           <>
-            <EditLogo />
+            <h3> <EditLogo/></h3>
           </>
         ) : (
           <Box className="ntb">

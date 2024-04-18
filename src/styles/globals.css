@@ -24,6 +24,7 @@
 
 .nuurniital {
   width: 50%;
+  height: 100vh;
   flex-shrink: 0;
   border-radius: var(--t--borders-radius-rounded-none, 0px);
   background: var(--d--colors-semantic-primary, #0166ff);
@@ -461,7 +462,7 @@
 .flex-center {
   display: flex;
   flex-direction: row;
-  gap: 30px;
+  gap: 10px;
   align-items: "center";
 }
 .ttAmount {
@@ -495,7 +496,7 @@
   flex-direction: row;
 }
 .dashContainer {
-  padding: 2.5vw 18vw;
+  padding: 1vw 18vw;
   background-color: #f3f4f6;
 }
 .dashMainContainer {

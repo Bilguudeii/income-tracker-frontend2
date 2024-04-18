@@ -1,3 +1,6 @@
+/* eslint-disable prefer-const */
+/* eslint-disable @typescript-eslint/no-unnecessary-condition */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import axios from "axios"
 import { RecordListItem } from "./recordListItem"
 import { useEffect, useState } from "react"

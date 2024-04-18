@@ -1,16 +1,17 @@
-import { GeldIconLogo } from "./Icons/GeldLogo"
-import { Plus } from "./Icons/Plus"
-import DashBoardOne from "./component/DashBoardOne"
-import DashBoardTwo from "./component/DashBoardTwo"
-import { List } from "./component//list"
-import { useRouter } from "next/router"
-import { BarChart } from "./component/chart"
-import { Chaart } from "./component/chaart"
-import { Box } from "@mui/material"
+import { GeldIconLogo } from "./Icons/GeldLogo";
+import DashBoardOne from "./component/DashBoardOne";
+import DashBoardTwo from "./component/DashBoardTwo";
+import DashBoardThree from "./component/DashBoardThree";
+import { List } from "./component//list";
+import { useRouter } from "next/router";
+import { BarChart } from "./component/chart";
+import { useState } from "react";
+import { Chaart } from "./component/chaart";
+import { Box } from "@mui/material";
 
 const Home = () => {
-  const router = useRouter()
-
+  const router = useRouter();
+  const [releod, setReleod] = useState("");
   return (
     <>
       <Box className="dashMMAIN">
@@ -18,15 +19,30 @@ const Home = () => {
           <Box className="navbar">
             <Box className="topmain">
               <GeldIconLogo />
-              <h2 className="dash">Dashboard</h2>
-              <Box className="records" onClick={() => router.push("/records")}>
+              <h3
+                style={{ cursor: "pointer" }}
+                className="dash"
+                onClick={() => router.push("/")}
+              >
+                Dashboard
+              </h3>
+              <h3
+                style={{ cursor: "pointer" }}
+                className="records"
+                onClick={() => router.push("/records")}
+              >
                 Records
-              </Box>
+              </h3>
             </Box>
             <Box className="top2main">
               <Box>
                 <button className="buttonRec">
-                  <Plus /> <h3 className="buttonRecc">Record</h3>
+                  <h3
+                    className="buttonRecc"
+                    onClick={() => router.push("/login")}
+                  >
+                    LogOut
+                  </h3>
                 </button>
               </Box>
               <img className="prof" src="prof.jpeg" />
@@ -38,7 +54,7 @@ const Home = () => {
                 <Box className="Stackk">
                   <DashBoardOne />
                   <DashBoardTwo />
-                  <DashBoardTwo />
+                  <DashBoardThree />
                 </Box>
               </Box>
               <Box className="middlee">
@@ -58,14 +74,14 @@ const Home = () => {
                 </Box>
               </Box>
               <Box className="bottom">
-                <List />
+                <List setReleod={setReleod} releod={releod} />
               </Box>
             </Box>
           </Box>
         </Box>
       </Box>
     </>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

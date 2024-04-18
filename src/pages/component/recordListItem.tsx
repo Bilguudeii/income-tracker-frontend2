@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Home, DeleteLogo } from "../Icons"
 import axios from "axios"
 import { Transcation } from "../interfaces"
@@ -60,7 +61,13 @@ export const RecordListItem = ({
         </Box>
       </Box>
       <Box className="flex-center">
-        <Box>
+        <Box
+          style={{ color: InExColors[transaction.transactionType] }}
+          className="ttAmount"
+        >
+          {InExDiff[transaction.transactionType]}
+          {transaction.amount}₮
+          </Box>
           <button className="ttNtb">
             <RecordModal
               type="edit"
@@ -68,17 +75,9 @@ export const RecordListItem = ({
               setReleod={setReleod}
             />
           </button>
-          <button onClick={deleteTransaction} className="ttNtb">
-            <DeleteLogo />
-          </button>
-        </Box>
-        <Box
-          style={{ color: InExColors[transaction.transactionType] }}
-          className="ttAmount"
-        >
-          {InExDiff[transaction.transactionType]}
-          {transaction.amount}₮
-        </Box>
+        <button onClick={deleteTransaction} className="ttNtb">
+          <DeleteLogo />
+        </button>
       </Box>
     </Box>
   )

@@ -18,6 +18,7 @@ const SignUpForm = () => {
       password,
     })
     router.push("/login")
+    console.log(res)
   }
 
   const handleSubmit = async (e: React.FormEvent) => {

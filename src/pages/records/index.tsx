@@ -1,31 +1,45 @@
-import { GeldIconLogo } from "../Icons/GeldLogo"
-import { Plus } from "../Icons/Plus"
-import { useRouter } from "next/router"
-import Category from "../component/category"
-import { RecordList } from "../component/RecordList"
-import { RecordModal } from "../component/RecordModal"
-import { useState } from "react"
-import RadioButtonsGroup from "../component/RadioButton"
-import { Box } from "@mui/material"
+import { GeldIconLogo } from "../Icons/GeldLogo";
+import { useRouter } from "next/router";
+import Category from "../component/category";
+import { RecordList } from "../component/RecordList";
+import { RecordModal } from "../component/RecordModal";
+import { useState } from "react";
+import RadioButtonsGroup from "../component/RadioButton";
+import { Box } from "@mui/material";
 
 const Records = () => {
-  const router = useRouter()
-  const [releod, setReleod] = useState("")
+  const router = useRouter();
+  const [releod, setReleod] = useState("");
   return (
     <Box>
       <Box className="MAIIIN">
         <Box className="navbar">
           <Box className="topmain">
             <GeldIconLogo />
-            <h2 className="dash" onClick={() => router.push("/")}>
+            <h3
+              style={{ cursor: "pointer" }}
+              className="dash"
+              onClick={() => router.push("/")}
+            >
               Dashboard
-            </h2>
-            <Box className="records">Records</Box>
+            </h3>
+            <h3
+              style={{ cursor: "pointer" }}
+              className="records"
+              onClick={() => router.push("/records")}
+            >
+              Records
+            </h3>
           </Box>
           <Box className="top2main">
             <Box className="ntbContainer">
               <button className="buttonRec">
-                <Plus /> <h3 className="buttonRecc">Record</h3>
+                <h3
+                  className="buttonRecc"
+                  onClick={() => router.push("/login")}
+                >
+                  LogOut
+                </h3>
               </button>
             </Box>
             <img className="prof" src="prof.jpeg" />
@@ -52,7 +66,7 @@ const Records = () => {
         </Box>
       </Box>
     </Box>
-  )
-}
+  );
+};
 
-export default Records
+export default Records;
