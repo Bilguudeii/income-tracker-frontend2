@@ -6,7 +6,7 @@ import { ListItem } from "./listItem"
 import { useEffect, useState } from "react"
 import { Box } from "@mui/material"
 
-export const List = ({ setReleod, releod }:any) => {
+export const List = ({ setReleod, releod }: any) => {
   const [transactions, setTransactions] = useState([])
   const [userId, setUserId] = useState<string>("")
 
@@ -24,7 +24,7 @@ export const List = ({ setReleod, releod }:any) => {
       if (userId) {
         try {
           const response = await axios.get(
-            `http://localhost:8080/get-transaction-userId/${userId}`
+            `https://income-tracker-backend-15ch.onrender.com/get-transaction-userId/${userId}`
           )
           console.log(response)
           const sortedTransactions = response.data.sort((a: any, b: any) => {
@@ -45,7 +45,11 @@ export const List = ({ setReleod, releod }:any) => {
       <Box className="lasst">
         <Box className="lastrecords">Last records</Box>
         {transactions.map((transaction, index) => (
-          <ListItem key={index} transaction={transaction} setReleod={setReleod} />
+          <ListItem
+            key={index}
+            transaction={transaction}
+            setReleod={setReleod}
+          />
         ))}
       </Box>
     </Box>

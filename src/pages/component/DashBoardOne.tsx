@@ -1,12 +1,12 @@
 import { Box } from "@mui/material"
 import * as React from "react"
-import CardPic from "../../../public/Large.png"
+import CPic from "../../../public/Large.png"
 
 function DashBoardOne() {
   return (
     <Box
       style={{
-        backgroundImage: `url(${CardPic.src})`,
+        backgroundImage: `url(${CPic.src})`,
         width: "384.12px",
         height: "216px",
         position: "relative",

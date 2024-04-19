@@ -9,30 +9,61 @@ const SignUpForm = () => {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [rePassword, setRePassword] = useState("")
+  const [usernameError, setUsernameError] = useState("")
+  const [emailError, setEmailError] = useState("")
+  const [passwordError, setPasswordError] = useState("")
+  const [rePasswordError, setRePasswordError] = useState("")
   const router = useRouter()
 
   const createUser = async () => {
-    const res = await axios.post("http://localhost:8080/signup", {
-      username,
-      email,
-      password,
-    })
+    const res = await axios.post(
+      "https://income-tracker-backend-15ch.onrender.com/signup",
+      {
+        username,
+        email,
+        password,
+      }
+    )
     router.push("/login")
     console.log(res)
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    if (password !== rePassword) {
-      alert("Passwords do not match")
+
+    if (username.length < 4) {
+      setUsernameError("Username must be at least 4 characters long")
       return
+    } else {
+      setUsernameError("")
     }
+
+    if (!email.includes("@")) {
+      setEmailError("Please enter a valid email address")
+      return
+    } else {
+      setEmailError("")
+    }
+
+    if (password.length < 8) {
+      setPasswordError("Password must be at least 8 characters long")
+      return
+    } else {
+      setPasswordError("")
+    }
+
+    if (password !== rePassword) {
+      setRePasswordError("Passwords do not match")
+      return
+    } else {
+      setRePasswordError("")
+    }
+
     try {
       await createUser()
-      alert("User created successfully!")
+      alert("Your account has been created successfully!")
     } catch (error) {
       console.error(error)
-      alert("Error creating user. Please try again.")
     }
   }
 
@@ -44,33 +75,37 @@ const SignUpForm = () => {
         <Box className="hoyrdhUg">
           Sign up below to create your Wallet account
         </Box>
-        <Box onSubmit={handleSubmit} className="aaaaD">
+        <form onSubmit={handleSubmit} className="aaaaD">
           <TextField
             placeholder="Username"
             type="text"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
           />
+          {usernameError && <div className="error">{usernameError}</div>}
           <TextField
             placeholder="Email"
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
+          {emailError && <div className="error">{emailError}</div>}
           <TextField
             placeholder="Password"
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
+          {passwordError && <div className="error">{passwordError}</div>}
           <TextField
             placeholder="Re-enter Password"
             type="password"
             value={rePassword}
             onChange={(e) => setRePassword(e.target.value)}
           />
-          <Button onClick={createUser}>Sign Up</Button>
-        </Box>
+          {rePasswordError && <div className="error">{rePasswordError}</div>}
+          <Button type="submit">Sign Up</Button>
+        </form>
         <Box className="text-center text-gray-500">
           Already have an account?{" "}
           <a href="/login" className="text-blue-500 hover:text-blue-700">

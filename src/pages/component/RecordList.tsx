@@ -24,7 +24,7 @@ export const RecordList = ({ setReleod, releod }: any) => {
       if (userId) {
         try {
           const response = await axios.get(
-            `http://localhost:8080/get-transaction-userId/${userId}`
+            `https://income-tracker-backend-15ch.onrender.com/${userId}`
           )
           console.log(response)
           const sortedTransactions = response.data.sort((a: any, b: any) => {

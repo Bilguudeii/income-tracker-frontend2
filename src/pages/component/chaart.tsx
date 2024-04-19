@@ -6,7 +6,13 @@ import { Box } from "@mui/material"
 ChartJS.register(ArcElement, Tooltip, Legend)
 
 const categories = ["Bills", "Food", "Shopping", "Insurance", "Clothing"]
-const expenses = [300, 50, 100, 200, 150]
+let expenses = [
+  categories.length,
+  categories.length,
+  categories.length,
+  categories.length,
+  categories.length,
+]
 const colors = ["#1C64F2", "#E74694", "#FDBA8C", `#16BDCA`, `#F2901C`]
 
 const sum = expenses.reduce((a, b) => a + b, 0)

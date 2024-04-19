@@ -2,14 +2,14 @@ import { Box } from "@mui/material"
 import * as React from "react"
 import { Upside } from "../Icons"
 
-function DashBoardOne() {
+function DashBoardTwo() {
   return (
     <Box className="dashboardTwo">
       <Box className="twotop">
         <h3 className="urinc">Your Income</h3>
       </Box>
       <Box>
-        <h3 className="urinc texttt">1,200,000₮</h3>
+        <h3 className="urinc texttt">0₮</h3>
         <h3 className="urinc textttt">Your income Amount</h3>
       </Box>
       <Box>
@@ -21,4 +21,4 @@ function DashBoardOne() {
   )
 }
 
-export default DashBoardOne
+export default DashBoardTwo

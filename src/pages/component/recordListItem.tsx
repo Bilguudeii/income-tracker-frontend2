@@ -16,7 +16,7 @@ export const RecordListItem = ({
     const Transactionid = transaction._id
     try {
       const response = await axios.delete(
-        `http://localhost:8080/delete-transaction/${Transactionid}`
+        `https://income-tracker-backend-15ch.onrender.com/${Transactionid}`
       )
       alert("deleted transaction")
       setReleod && setReleod(response)
@@ -67,14 +67,10 @@ export const RecordListItem = ({
         >
           {InExDiff[transaction.transactionType]}
           {transaction.amount}₮
-          </Box>
-          <button className="ttNtb">
-            <RecordModal
-              type="edit"
-              id={transaction._id}
-              setReleod={setReleod}
-            />
-          </button>
+        </Box>
+        <button className="ttNtb">
+          <RecordModal type="edit" id={transaction._id} setReleod={setReleod} />
+        </button>
         <button onClick={deleteTransaction} className="ttNtb">
           <DeleteLogo />
         </button>

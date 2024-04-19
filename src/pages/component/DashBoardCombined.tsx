@@ -2,7 +2,7 @@ import { Box } from "@mui/material"
 import * as React from "react"
 import { Upside } from "../Icons"
 
-function DashBoardOne() {
+function DashBoardCombined() {
   return (
     <Box className="dashboardTwo">
       <Box className="twotop">
@@ -21,4 +21,4 @@ function DashBoardOne() {
   )
 }
 
-export default DashBoardOne
+export default DashBoardCombined

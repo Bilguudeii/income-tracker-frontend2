@@ -1,17 +1,43 @@
-import { GeldIconLogo } from "./Icons/GeldLogo";
-import DashBoardOne from "./component/DashBoardOne";
-import DashBoardTwo from "./component/DashBoardTwo";
-import DashBoardThree from "./component/DashBoardThree";
-import { List } from "./component//list";
-import { useRouter } from "next/router";
-import { BarChart } from "./component/chart";
-import { useState } from "react";
-import { Chaart } from "./component/chaart";
-import { Box } from "@mui/material";
+import { GeldIconLogo } from "./Icons/GeldLogo"
+import DashBoardOne from "./component/DashBoardOne"
+import DashBoardTwo from "./component/DashBoardTwo"
+import DashBoardThree from "./component/DashBoardThree"
+import { List } from "./component//list"
+import { useRouter } from "next/router"
+import { BarChart } from "./component/chart"
+import { useEffect, useState } from "react"
+import { Chaart } from "./component/chaart"
+import { Box } from "@mui/material"
+import axios from "axios"
+import DashBoardCombined from "./component/DashBoardCombined"
 
-const Home = () => {
-  const router = useRouter();
-  const [releod, setReleod] = useState("");
+type Transaction = {
+  amount: number | string
+  category: string
+  note: string
+  transactionTitle: string
+  transactionType: string
+  userId?: string
+  __v: number
+  _id: string
+}
+
+const Home = ({ transaction }: { transaction: Transaction[] }) => {
+  // let income = 0
+  // let expense = 0
+  // for(let i = 0;i< transaction.length; i++){
+  //   if(transaction[i],transactionType === 'income'){
+  //     income = income + transaction[i].amount
+  //   }else {
+  //     expense = expense - transaction[i].amount
+  //   }
+  //   }
+  // }
+
+  // let total = income +
+  const router = useRouter()
+  const [releod, setReleod] = useState("")
+
   return (
     <>
       <Box className="dashMMAIN">
@@ -53,8 +79,8 @@ const Home = () => {
               <Box className="Stack">
                 <Box className="Stackk">
                   <DashBoardOne />
-                  <DashBoardTwo />
-                  <DashBoardThree />
+                  <DashBoardCombined />
+                  <DashBoardCombined />
                 </Box>
               </Box>
               <Box className="middlee">
@@ -63,7 +89,7 @@ const Home = () => {
                     <h2>Income - Expense</h2>
                   </Box>
                   <Box className="middletwoo">
-                    <BarChart />
+                    <BarChart />  
                   </Box>
                 </Box>
                 <Box>
@@ -81,7 +107,7 @@ const Home = () => {
         </Box>
       </Box>
     </>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home

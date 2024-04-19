@@ -1,16 +1,16 @@
-/* eslint-disable prefer-const */
 /* eslint-disable @typescript-eslint/no-unnecessary-condition */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable max-lines */
 import Box from "@mui/material/Box"
 import Typography from "@mui/material/Typography"
 import Modal from "@mui/material/Modal"
-import { SelectChangeEvent } from "@mui/material"
+import { SelectChangeEvent, Switch } from "@mui/material"
 import { RecordCategorySelector } from "./RecordCategorySelector"
 import { useEffect, useState } from "react"
 import { RecordToggleButton } from "./RecordToggleButton"
 import { EditLogo, Plus } from "../Icons"
 import axios from "axios"
+
 // import { Transcation } from "../interfaces"
 
 const style = {
@@ -57,7 +57,9 @@ export const RecordModal = ({
   const [required] = useState("")
   const handleOpen = async () => {
     const response = await axios.get(
-      `http://localhost:8080/get-transaction/${id && id}`
+      `https://income-tracker-backend-15ch.onrender.com/get-transaction/${
+        id && id
+      }`
     )
 
     setEditTransaction(response.data)
@@ -95,7 +97,7 @@ export const RecordModal = ({
   const addTransaction = async () => {
     try {
       const response = await axios.post(
-        "http://localhost:8080/create-transaction",
+        "https://income-tracker-backend-15ch.onrender.com/create-transaction",
         {
           createAt: new Date(date),
           userId: userId && userId,
@@ -107,10 +109,25 @@ export const RecordModal = ({
       throw error
     }
   }
+  // const ParentComponent = async () => {
+
+  //   const handleInputChange =  (e) => (e.target.value) => {
+  //     setInputValue(e.target.value)
+  //   }
+
+  //   return (
+  //     <div>
+  //       <ChildComponent
+  //         inputValue={inputValue}
+  //         onInputChange={handleInputChange}
+  //       />
+  //     </div>
+  //   )
+  // }
   const editTransactionFunc = async () => {
     try {
       const response = await axios.put(
-        `http://localhost:8080/update-transaction/${id}`,
+        `https://income-tracker-backend-15ch.onrender.com/update-transaction/${id}`,
         {
           userId: userId && userId,
           ...editTransaction,
@@ -132,7 +149,10 @@ export const RecordModal = ({
       <Box onClick={handleOpen}>
         {type == "edit" ? (
           <>
-            <h3> <EditLogo/></h3>
+            <h3>
+              {" "}
+              <EditLogo />
+            </h3>
           </>
         ) : (
           <Box className="ntb">
